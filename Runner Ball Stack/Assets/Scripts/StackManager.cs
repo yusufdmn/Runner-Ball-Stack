@@ -23,7 +23,7 @@ public class StackManager : MonoBehaviour
     #endregion
 
 
-    public List<GameObject> allBalls;
+    public List<GameObject> stackedBalls;
     [SerializeField] float scaleDuration = 0.1f;
     [SerializeField] float followDuration = 0.5f;
 
@@ -41,11 +41,11 @@ public class StackManager : MonoBehaviour
 
     public void StackBalls(GameObject newBall)
     {
-        int sizeOfBallList = allBalls.Count;
-        Vector3 pos = allBalls[sizeOfBallList - 1].transform.position;
+        int sizeOfBallList = stackedBalls.Count;
+        Vector3 pos = stackedBalls[sizeOfBallList - 1].transform.position;
         pos.z -= 1f;
         newBall.transform.position = pos;
-        allBalls.Add(newBall);
+        stackedBalls.Add(newBall);
         StartCoroutine(BigSlowEffect());
 
     }
@@ -54,11 +54,11 @@ public class StackManager : MonoBehaviour
     {
         float bigScale = 1.4f;
         Vector3 scale = Vector3.one;
-        for (int i = allBalls.Count - 1; i > 0; i--)
+        for (int i = stackedBalls.Count - 1; i > 0; i--)
         {
             int index = i;
-            allBalls[index].transform.DOScale(bigScale, scaleDuration).OnComplete(() =>
-                allBalls[index].transform.DOScale(scale, scaleDuration)
+            stackedBalls[index].transform.DOScale(bigScale, scaleDuration).OnComplete(() =>
+                stackedBalls[index].transform.DOScale(scale, scaleDuration)
             );
             yield return new WaitForSeconds(0.05f);
         }
@@ -67,27 +67,27 @@ public class StackManager : MonoBehaviour
     public void FollowNextBall()
     {
         float z;
-        for(int i = 1; i < allBalls.Count; i++)
+        for(int i = 1; i < stackedBalls.Count; i++)
         {
-            z = allBalls[i - 1].transform.position.z - 1;
-            allBalls[i].transform.DOMoveZ(z, followDuration);
+            z = stackedBalls[i - 1].transform.position.z - 1;
+            stackedBalls[i].transform.DOMoveZ(z, followDuration);
         }
     }
 
     public void MoveBalls()
     {
         float x;
-        for(int i = 1; i < allBalls.Count; i++)
+        for(int i = 1; i < stackedBalls.Count; i++)
         {
-            x = allBalls[i-1].transform.position.x;
-            allBalls[i].transform.DOMoveX(x, followDuration);
+            x = stackedBalls[i-1].transform.position.x;
+            stackedBalls[i].transform.DOMoveX(x, followDuration);
         }
     }
 
     public void MoveBallsToOrigin()
     {
-        float origin = allBalls[0].transform.position.x;
-        foreach (GameObject ball in allBalls)
+        float origin = stackedBalls[0].transform.position.x;
+        foreach (GameObject ball in stackedBalls)
             ball.transform.DOMoveX(origin, followDuration);
     }
 }

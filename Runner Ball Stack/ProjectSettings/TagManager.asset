@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - ball
-  - Finish-Throw Ball
   - obstacle
   - FirstBall
+  - Finish-ThrowBall
+  - ThrowBall
   layers:
   - Default
   - TransparentFX

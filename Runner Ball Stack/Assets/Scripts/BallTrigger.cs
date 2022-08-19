@@ -7,7 +7,7 @@ public class BallTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "ball" && !StackManager.Instance.allBalls.Contains(other.gameObject))
+        if(other.tag == "ball" && !StackManager.Instance.stackedBalls.Contains(other.gameObject))
         {
             GameObject newStackedBall = other.gameObject;
             AddBallIntoStack(newStackedBall);

@@ -11,7 +11,7 @@ public class Obstacle : MonoBehaviour
         {
             DestroyBall(other.gameObject);
 
-            GameObject newFirstBall = StackManager.Instance.allBalls[0];
+            GameObject newFirstBall = StackManager.Instance.stackedBalls[0];
             AssignNewFirstBall(newFirstBall);
             AssignFirstBallForCameraFollow(newFirstBall);
         }
@@ -21,7 +21,7 @@ public class Obstacle : MonoBehaviour
 
     private void DestroyBall(GameObject ball)
     {
-        StackManager.Instance.allBalls.Remove(ball);
+        StackManager.Instance.stackedBalls.Remove(ball);
         Destroy(ball);
     }
 

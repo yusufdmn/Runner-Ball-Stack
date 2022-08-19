@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -11,9 +12,14 @@ public class CameraMovement : MonoBehaviour
 
     void LateUpdate()
     {
-        Vector3 targetPos = firstBall.position + offset;
-        targetPos.x = transform.position.x;
-        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothDamp);
+        FollowFirstBall();
+    }
+
+    void FollowFirstBall()
+    {
+        Vector3 followedPos = firstBall.position + offset;
+        followedPos.x = transform.position.x;
+        transform.position = Vector3.SmoothDamp(transform.position, followedPos, ref velocity, smoothDamp);
     }
 
     public void GetFirstBall(GameObject newFirstBall)
@@ -21,4 +27,12 @@ public class CameraMovement : MonoBehaviour
         firstBall = newFirstBall.transform;
     }
 
+    public void MoveAndSetAngle(Vector3 newOffset, Vector3 angle, float moveDuration)
+    {
+        Vector3 pos = transform.position + newOffset;
+        transform.DOMove(pos, moveDuration);
+        transform.DORotate(angle, moveDuration).OnComplete(() =>
+            this.enabled = false
+        ); ;
+    }
 }
