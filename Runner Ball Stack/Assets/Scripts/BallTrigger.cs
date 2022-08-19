@@ -9,12 +9,15 @@ public class BallTrigger : MonoBehaviour
     {
         if(other.tag == "ball" && !StackManager.Instance.allBalls.Contains(other.gameObject))
         {
-            GameObject newBall = other.gameObject;
-            newBall.AddComponent<BallTrigger>();
-          //  newBall.tag = "Untagged";
-            StackManager.Instance.StackBalls(newBall);
+            GameObject newStackedBall = other.gameObject;
+            AddBallIntoStack(newStackedBall);
         }
     }
 
+    private void AddBallIntoStack(GameObject newStackedBall)
+    {
+        newStackedBall.AddComponent<BallTrigger>();
+        StackManager.Instance.StackBalls(newStackedBall);
+    }
 
 }

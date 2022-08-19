@@ -69,7 +69,6 @@ public class StackManager : MonoBehaviour
         float z;
         for(int i = 1; i < allBalls.Count; i++)
         {
-            //currentPos = allBalls[i].transform.position - Vector3.forward;
             z = allBalls[i - 1].transform.position.z - 1;
             allBalls[i].transform.DOMoveZ(z, followDuration);
         }
