@@ -10,11 +10,8 @@ public class BallTrigger : MonoBehaviour
         if(other.tag == "ball" && !StackManager.Instance.allBalls.Contains(other.gameObject))
         {
             GameObject newBall = other.gameObject;
-            //int newBallIndex = StackManager.Instance.allBalls.Count;
-            //newBall.AddComponent<FollowerBall>();
-            //newBall.GetComponent<FollowerBall>().ownIndex = newBallIndex;
             newBall.AddComponent<BallTrigger>();
-            newBall.tag = "Untagged";
+          //  newBall.tag = "Untagged";
             StackManager.Instance.StackBalls(newBall);
         }
     }

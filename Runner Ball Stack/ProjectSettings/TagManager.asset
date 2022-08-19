@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ball
   - Finish-Throw Ball
+  - obstacle
+  - FirstBall
   layers:
   - Default
   - TransparentFX

@@ -6,8 +6,8 @@ public class FirstBallMoveForward : MonoBehaviour
 {
     float x;
     [Range(1, 100)]
-    [SerializeField] float speedForward;
-    [SerializeField] float speedSide;
+    [SerializeField] float speedForward = 2;
+    [SerializeField] float speedSide = 5;
     [SerializeField] float speedSideMobil = 0.05f;
 
     Touch touch;

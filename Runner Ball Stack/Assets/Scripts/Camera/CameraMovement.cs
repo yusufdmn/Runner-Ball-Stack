@@ -16,5 +16,9 @@ public class CameraMovement : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothDamp);
     }
 
+    public void GetFirstBall(GameObject newFirstBall)
+    {
+        firstBall = newFirstBall.transform;
+    }
 
 }
