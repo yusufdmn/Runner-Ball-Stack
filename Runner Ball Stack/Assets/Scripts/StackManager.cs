@@ -30,15 +30,20 @@ public class StackManager : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
-        MoveBalls();
+        float x = Input.GetAxis("Horizontal");
+        FollowNextBall();
+        if (x != 0)
+            MoveBalls();
+        else
+            MoveBallsToOrigin();
+        
     }
 
     public void StackBalls(GameObject newBall)
     {
         int sizeOfBallList = allBalls.Count;
         Vector3 pos = allBalls[sizeOfBallList - 1].transform.position;
-        pos.z -= 1;
+        pos.z -= 1f;
         newBall.transform.position = pos;
         allBalls.Add(newBall);
         StartCoroutine(BigSlowEffect());
@@ -59,15 +64,31 @@ public class StackManager : MonoBehaviour
         }
     }
 
-    public void MoveBalls()
+    public void FollowNextBall()
     {
-        Vector3 pos;
+        float z;
         for(int i = 1; i < allBalls.Count; i++)
         {
-            pos = allBalls[i-1].transform.position;
-            pos.z -= 1;
-            allBalls[i].transform.DOMove(pos, followDuration);
+            //currentPos = allBalls[i].transform.position - Vector3.forward;
+            z = allBalls[i - 1].transform.position.z - 1;
+            allBalls[i].transform.DOMoveZ(z, followDuration);
         }
     }
 
+    public void MoveBalls()
+    {
+        float x;
+        for(int i = 1; i < allBalls.Count; i++)
+        {
+            x = allBalls[i-1].transform.position.x;
+            allBalls[i].transform.DOMoveX(x, followDuration);
+        }
+    }
+
+    public void MoveBallsToOrigin()
+    {
+        float origin = allBalls[0].transform.position.x;
+        foreach (GameObject ball in allBalls)
+            ball.transform.DOMoveX(origin, followDuration);
+    }
 }

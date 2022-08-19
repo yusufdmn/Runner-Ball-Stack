@@ -8,7 +8,7 @@ public class FirstBallMoveForward : MonoBehaviour
     [Range(1, 100)]
     [SerializeField] float speedForward;
     [SerializeField] float speedSide;
-    [SerializeField] float speedSideMobil;
+    [SerializeField] float speedSideMobil = 0.05f;
 
     Touch touch;
     Vector3 moveVector;
