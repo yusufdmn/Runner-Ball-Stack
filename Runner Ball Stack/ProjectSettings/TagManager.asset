@@ -9,6 +9,7 @@ TagManager:
   - FirstBall
   - Finish-ThrowBall
   - ThrowBall
+  - diamond
   layers:
   - Default
   - TransparentFX

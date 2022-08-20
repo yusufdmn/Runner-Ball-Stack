@@ -29,6 +29,7 @@ public class Obstacle : MonoBehaviour
     {
         newFirstBall.tag = "FirstBall";
         newFirstBall.AddComponent<FirstBallMoveForward>();
+        newFirstBall.AddComponent<FinishDedector>();
     }
 
     private void AssignFirstBallForCameraFollow(GameObject newFirstBall)

@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class ThrowBall : Finish
 {
+    public GameObject restartButton;   // REMOVE
+
+
     private bool canThrow;
     List<GameObject> stackedBalls;
 
@@ -12,10 +16,14 @@ public class ThrowBall : Finish
 
     [SerializeField]Vector3 cameraPos;
     [SerializeField]Vector3 cameraAngle;
-    float cameraMoveDuraiton = 1;
+    [SerializeField] float cameraMoveDuraiton;
 
     float time;
     [SerializeField] float timeGap;
+
+    public void RestartLevel() {    // REMOVE
+        SceneManager.LoadScene(0);
+    }        
     private void Start()
     {
         SetStackedBallsToThrow();
@@ -39,11 +47,15 @@ public class ThrowBall : Finish
 
         if (canThrow)
         {                
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 ThrowNextBall(throwSpeed);
                 stackedBalls.RemoveAt(0);
                 canThrow = false;
+                if(stackedBalls.Count < 1)
+                {
+                    restartButton.SetActive(true);
+                }
                 foreach (GameObject ball in stackedBalls)
                 {
                     ball.transform.DOMoveZ(ball.transform.position.z + 1, 1f);

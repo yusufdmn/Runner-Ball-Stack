@@ -10,9 +10,12 @@ public class CameraMovement : MonoBehaviour
     float smoothDamp = 0.15f;
     Vector3 velocity;
 
+    bool isFinished;
+
     void LateUpdate()
     {
-        FollowFirstBall();
+        if(!isFinished)
+            FollowFirstBall();
     }
 
     void FollowFirstBall()
@@ -29,10 +32,9 @@ public class CameraMovement : MonoBehaviour
 
     public void MoveAndSetAngle(Vector3 newOffset, Vector3 angle, float moveDuration)
     {
+        isFinished = true;
         Vector3 pos = transform.position + newOffset;
         transform.DOMove(pos, moveDuration);
-        transform.DORotate(angle, moveDuration).OnComplete(() =>
-            this.enabled = false
-        ); ;
+        transform.DORotate(angle, moveDuration);
     }
 }

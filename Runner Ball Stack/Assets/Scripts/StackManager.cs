@@ -26,17 +26,36 @@ public class StackManager : MonoBehaviour
     public List<GameObject> stackedBalls;
     [SerializeField] float scaleDuration = 0.1f;
     [SerializeField] float followDuration = 0.5f;
+ //   [SerializeField] float moveSideDuration = 0.5f;
 
 
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
         FollowNextBall();
+
+        if (Input.touchCount > 0)
+            MoveBalls();
+        else
+            MoveBallsToOrigin();
+
+        FollowNextBall();
+/*
+#if UNITY_ANDROID
+        if (Input.touchCount > 0)
+            MoveBalls();
+        else
+            MoveBallsToOrigin();
+#endif
+
+#if UNITY_EDITOR
+        float x = Input.GetAxis("Horizontal");
         if (x != 0)
             MoveBalls();
         else
             MoveBallsToOrigin();
-        
+#endif
+*/
+
     }
 
     public void StackBalls(GameObject newBall)
