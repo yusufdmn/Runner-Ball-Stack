@@ -26,19 +26,18 @@ public class StackManager : MonoBehaviour
     public List<GameObject> stackedBalls;
     [SerializeField] float scaleDuration = 0.1f;
     [SerializeField] float followDuration = 0.5f;
- //   [SerializeField] float moveSideDuration = 0.5f;
+    [SerializeField] float moveSideDuration = 0.5f;
 
 
     void Update()
     {
-        FollowNextBall();
+               FollowNextBall();
 
-        if (Input.touchCount > 0)
-            MoveBalls();
-        else
-            MoveBallsToOrigin();
+               if (Input.touchCount > 0)
+                   MoveBalls();
+               else
+                   MoveBallsToOrigin();
 
-        FollowNextBall();
 /*
 #if UNITY_ANDROID
         if (Input.touchCount > 0)
@@ -99,7 +98,7 @@ public class StackManager : MonoBehaviour
         for(int i = 1; i < stackedBalls.Count; i++)
         {
             x = stackedBalls[i-1].transform.position.x;
-            stackedBalls[i].transform.DOMoveX(x, followDuration);
+            stackedBalls[i].transform.DOMoveX(x, moveSideDuration);
         }
     }
 
@@ -107,6 +106,6 @@ public class StackManager : MonoBehaviour
     {
         float origin = stackedBalls[0].transform.position.x;
         foreach (GameObject ball in stackedBalls)
-            ball.transform.DOMoveX(origin, followDuration);
+            ball.transform.DOMoveX(origin, moveSideDuration);
     }
 }

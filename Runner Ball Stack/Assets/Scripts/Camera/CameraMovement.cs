@@ -10,7 +10,8 @@ public class CameraMovement : MonoBehaviour
     float smoothDamp = 0.15f;
     Vector3 velocity;
 
-    bool isFinished;
+    public bool isFinished;
+    [SerializeField] float moveDuration;
 
     void LateUpdate()
     {
@@ -30,7 +31,7 @@ public class CameraMovement : MonoBehaviour
         firstBall = newFirstBall.transform;
     }
 
-    public void MoveAndSetAngle(Vector3 newOffset, Vector3 angle, float moveDuration)
+    public void MoveAndSetAngle(Vector3 newOffset, Vector3 angle)
     {
         isFinished = true;
         Vector3 pos = transform.position + newOffset;

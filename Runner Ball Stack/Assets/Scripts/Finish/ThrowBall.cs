@@ -16,7 +16,6 @@ public class ThrowBall : Finish
 
     [SerializeField]Vector3 cameraPos;
     [SerializeField]Vector3 cameraAngle;
-    [SerializeField] float cameraMoveDuraiton;
 
     float time;
     [SerializeField] float timeGap;
@@ -79,7 +78,7 @@ public class ThrowBall : Finish
 
     void SetCamera()
     {
-        Camera.main.GetComponent<CameraMovement>().MoveAndSetAngle(cameraPos, cameraAngle, cameraMoveDuraiton);
+        Camera.main.GetComponent<CameraMovement>().MoveAndSetAngle(cameraPos, cameraAngle);
     }
 
     void TimerToThrow(float time, float timeLimit)

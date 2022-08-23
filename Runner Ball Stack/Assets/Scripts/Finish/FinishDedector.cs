@@ -14,5 +14,10 @@ public class FinishDedector : MonoBehaviour
             gameObject.GetComponent<FirstBallMoveForward>().enabled = false;
             other.GetComponent<Finish>().enabled = true;
         }
+
+        if(other.tag == "CircleEnd")
+        {
+            other.GetComponent<Finish>().enabled = true;
+        }
     }
 }
