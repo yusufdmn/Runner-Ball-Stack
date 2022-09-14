@@ -31,29 +31,38 @@ public class StackManager : MonoBehaviour
 
     void Update()
     {
-               FollowNextBall();
+        FollowNextBall();
 
-               if (Input.touchCount > 0)
-                   MoveBalls();
-               else
-                   MoveBallsToOrigin();
-
-/*
-#if UNITY_ANDROID
         if (Input.touchCount > 0)
             MoveBalls();
         else
             MoveBallsToOrigin();
-#endif
-
-#if UNITY_EDITOR
-        float x = Input.GetAxis("Horizontal");
+        /*
+                  if (Input.touchCount > 0)
+                      MoveBalls();
+                  else
+                      MoveBallsToOrigin();
+        /*float x = Input.GetAxis("Horizontal");
         if (x != 0)
             MoveBalls();
         else
-            MoveBallsToOrigin();
-#endif
-*/
+            MoveBallsToOrigin();*/
+        /*
+        #if UNITY_ANDROID
+                if (Input.touchCount > 0)
+                    MoveBalls();
+                else
+                    MoveBallsToOrigin();
+        #endif
+
+        #if UNITY_EDITOR
+                float x = Input.GetAxis("Horizontal");
+                if (x != 0)
+                    MoveBalls();
+                else
+                    MoveBallsToOrigin();
+        #endif
+        */
 
     }
 
@@ -65,7 +74,6 @@ public class StackManager : MonoBehaviour
         newBall.transform.position = pos;
         stackedBalls.Add(newBall);
         StartCoroutine(BigSlowEffect());
-
     }
 
     public IEnumerator BigSlowEffect()
@@ -97,7 +105,7 @@ public class StackManager : MonoBehaviour
         float x;
         for(int i = 1; i < stackedBalls.Count; i++)
         {
-            x = stackedBalls[i-1].transform.position.x;
+            x = stackedBalls[i - 1].transform.position.x;
             stackedBalls[i].transform.DOMoveX(x, moveSideDuration);
         }
     }
@@ -105,7 +113,9 @@ public class StackManager : MonoBehaviour
     public void MoveBallsToOrigin()
     {
         float origin = stackedBalls[0].transform.position.x;
-        foreach (GameObject ball in stackedBalls)
-            ball.transform.DOMoveX(origin, moveSideDuration);
+        for (int i = 1; i < stackedBalls.Count; i++)
+        {
+            stackedBalls[i].transform.DOMoveX(origin, moveSideDuration);
+        }
     }
 }

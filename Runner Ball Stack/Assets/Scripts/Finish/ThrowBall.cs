@@ -27,7 +27,6 @@ public class ThrowBall : Finish
     {
         SetStackedBallsToThrow();
         SetCamera();
-        StackManager.Instance.MoveBallsToOrigin();
         Destroy(StackManager.Instance.gameObject, 0.5f);
         foreach (GameObject ball in stackedBalls)
         {
@@ -46,19 +45,14 @@ public class ThrowBall : Finish
 
         if (canThrow)
         {                
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetTouch(0).phase == TouchPhase.Began)
+            if (Input.GetKeyDown(KeyCode.Space) /*|| Input.GetTouch(0).phase == TouchPhase.Began*/)
             {
                 ThrowNextBall(throwSpeed);
-                stackedBalls.RemoveAt(0);
-                canThrow = false;
                 if(stackedBalls.Count < 1)
                 {
-                    restartButton.SetActive(true);
+                    GameManager.Instance.EndTheGame();
                 }
-                foreach (GameObject ball in stackedBalls)
-                {
-                    ball.transform.DOMoveZ(ball.transform.position.z + 1, 1f);
-                }
+                MoveBallsToLine();
             }
         }
     }
@@ -68,10 +62,14 @@ public class ThrowBall : Finish
         Rigidbody rigidbody = stackedBalls[0].GetComponent<Rigidbody>();
         rigidbody.isKinematic = false;
         rigidbody.velocity = Vector3.forward * throwSpeed * Time.deltaTime;
+
+        canThrow = false;
+        stackedBalls.RemoveAt(0);
     }
 
     public void SetStackedBallsToThrow()
     {
+        StackManager.Instance.MoveBallsToOrigin();
         stackedBalls = StackManager.Instance.stackedBalls;
         canThrow = true;
     }
@@ -81,13 +79,11 @@ public class ThrowBall : Finish
         Camera.main.GetComponent<CameraMovement>().MoveAndSetAngle(cameraPos, cameraAngle);
     }
 
-    void TimerToThrow(float time, float timeLimit)
+    void MoveBallsToLine()
     {
-        time += Time.deltaTime;
-        if(time > timeLimit)
+        foreach (GameObject ball in stackedBalls)
         {
-            canThrow = true;
-            time = 0;
+            ball.transform.DOMoveZ(ball.transform.position.z + 1, 1f);
         }
     }
 }

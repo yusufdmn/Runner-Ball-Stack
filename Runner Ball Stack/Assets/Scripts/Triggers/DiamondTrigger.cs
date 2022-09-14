@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class DiamondTrigger : MonoBehaviour
 {
-    int addedDiamond = 10;
+    int diamondWorth = 10;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "FirstBall" || other.tag == "ball")
         {
-            DiamondData.Instance.AddOrReduceDiamond(addedDiamond);
+            ScoreManager.Instance.currentScore += diamondWorth;
+            //DiamondData.Instance.AddOrReduceDiamond(diamondWorth);
             Destroy(gameObject);
         }
     }

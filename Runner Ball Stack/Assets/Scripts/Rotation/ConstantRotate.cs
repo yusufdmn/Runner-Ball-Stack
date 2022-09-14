@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ConstantRotate : MonoBehaviour
 {
-    [Range(1, 100)]
-    [SerializeField] float rotateSpeed;
+    [Range(1, 250)]
+    public float rotateSpeed;
 
     public void RotateX()
     {

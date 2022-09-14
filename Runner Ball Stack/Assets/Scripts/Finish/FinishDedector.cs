@@ -9,14 +9,16 @@ public class FinishDedector : MonoBehaviour
     {
         if(other.tag == "ThrowBall")
         {
+            GameManager.Instance.isFinishModeStarted = true;
             other.tag = "Untagged";
-            //List<GameObject> stackedBalls = StackManager.Instance.stackedBalls;
             gameObject.GetComponent<FirstBallMoveForward>().enabled = false;
             other.GetComponent<Finish>().enabled = true;
         }
 
         if(other.tag == "CircleEnd")
         {
+            GameManager.Instance.isFinishModeStarted = true;
+            other.tag = "Untagged";
             other.GetComponent<Finish>().enabled = true;
         }
     }

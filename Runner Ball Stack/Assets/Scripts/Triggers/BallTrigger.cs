@@ -17,6 +17,7 @@ public class BallTrigger : MonoBehaviour
     private void AddBallIntoStack(GameObject newStackedBall)
     {
         newStackedBall.AddComponent<BallTrigger>();
+        newStackedBall.AddComponent<RotateInAxisX>().rotateSpeed = 230;
         StackManager.Instance.StackBalls(newStackedBall);
     }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "FirstBall")
@@ -18,6 +17,7 @@ public class Obstacle : MonoBehaviour
         else if (other.tag == "ball")
             DestroyBall(other.gameObject);
     }
+
 
     private void DestroyBall(GameObject ball)
     {

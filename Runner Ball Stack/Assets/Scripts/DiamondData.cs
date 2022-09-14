@@ -27,12 +27,10 @@ public class DiamondData : MonoBehaviour
     {
         diamond = PlayerPrefs.GetInt("diamond");
     }
-    public void AddOrReduceDiamond(int addedDiamond)
+
+    public void SaveDiamonds(int levelScore)
     {
-        diamond += addedDiamond;
-        PlayerPrefs.SetInt("diamond",diamond);
-        diamondTextUpdater.UpdateText(diamond.ToString());
-
+        diamond += levelScore;
+        PlayerPrefs.SetInt("diamond", diamond);
     }
-
 }
