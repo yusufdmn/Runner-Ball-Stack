@@ -24,9 +24,9 @@ public class StackManager : MonoBehaviour
 
 
     public List<GameObject> stackedBalls;
-    [SerializeField] float scaleDuration = 0.1f;
-    [SerializeField] float followDuration = 0.5f;
-    [SerializeField] float moveSideDuration = 0.5f;
+    [SerializeField] float scaleDuration = 0.15f;
+    [SerializeField] float followDuration = 0.1f;
+    [SerializeField] float moveSideDuration = 0.4f;
 
 
     void Update()

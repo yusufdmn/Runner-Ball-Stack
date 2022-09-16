@@ -21,7 +21,6 @@ public class DiamondData : MonoBehaviour
     #endregion
 
     public int diamond;
-    [SerializeField] DiamondTextUpdater diamondTextUpdater;
 
     void Start()
     {

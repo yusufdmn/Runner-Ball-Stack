@@ -26,6 +26,7 @@ public class ScoreMultiplierTriggers : MonoBehaviour
         if(other.tag == "ball" || other.tag == "FirstBall")
         {
             other.tag = "Untagged";
+            other.gameObject.SetActive(false);
             scoreManager.GetBallWorth(multiplierFactor);
             child.DOScale(bigScale, 0.4f).OnComplete(() =>
                {

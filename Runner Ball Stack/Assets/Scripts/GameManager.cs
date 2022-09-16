@@ -51,6 +51,13 @@ public class GameManager : MonoBehaviour
 
     public void PassToNextLevel()
     {
+        ScoreManager.Instance.FinishGame();
+        StartCoroutine(NextLevel());
+    }
+
+    IEnumerator NextLevel()
+    {
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(0);
     }
 

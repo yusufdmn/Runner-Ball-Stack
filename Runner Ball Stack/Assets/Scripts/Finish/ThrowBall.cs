@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ThrowBall : Finish
 {
-    public GameObject restartButton;   // REMOVE
-
-
     private bool canThrow;
     List<GameObject> stackedBalls;
 
@@ -20,9 +17,7 @@ public class ThrowBall : Finish
     float time;
     [SerializeField] float timeGap;
 
-    public void RestartLevel() {    // REMOVE
-        SceneManager.LoadScene(0);
-    }        
+    
     private void Start()
     {
         SetStackedBallsToThrow();
@@ -45,21 +40,28 @@ public class ThrowBall : Finish
 
         if (canThrow)
         {                
-            if (Input.GetKeyDown(KeyCode.Space) /*|| Input.GetTouch(0).phase == TouchPhase.Began*/)
+            if (/*Input.GetKeyDown(KeyCode.Space) || */Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 ThrowNextBall(throwSpeed);
                 if(stackedBalls.Count < 1)
                 {
-                    GameManager.Instance.EndTheGame();
+                    StartCoroutine(LaunchEndOfTheGame());
                 }
                 MoveBallsToLine();
             }
         }
     }
 
+    IEnumerator LaunchEndOfTheGame()
+    {
+        yield return new WaitForSeconds(3f);
+        GameManager.Instance.EndTheGame();
+    }
+
     void ThrowNextBall(float throwSpeed)
     {
         Rigidbody rigidbody = stackedBalls[0].GetComponent<Rigidbody>();
+        stackedBalls[0].GetComponent<RotateInAxisX>().enabled = true;
         rigidbody.isKinematic = false;
         rigidbody.velocity = Vector3.forward * throwSpeed * Time.deltaTime;
 

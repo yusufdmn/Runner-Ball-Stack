@@ -10,13 +10,21 @@ public class DiamondTextUpdater : MonoBehaviour {
     
     private void Start()
     {
-        
+        StartCoroutine(GetDiamondCountAtStart());
+    }
+    IEnumerator GetDiamondCountAtStart()
+    {
+        yield return new WaitForSeconds(0.1f);
+        currentDiamond = DiamondData.Instance.diamond;
+        UpdateDiamondText();
     }
 
     public void UpdateDiamondText()
     {
-        currentDiamond += ScoreManager.Instance.currentScore;
-        diamondText.text = currentDiamond.ToString();
+        int totalDiamond = currentDiamond + ScoreManager.Instance.currentScore;
+
+       // currentDiamond += ScoreManager.Instance.currentScore;
+        diamondText.text = totalDiamond.ToString();
     }
 
 }

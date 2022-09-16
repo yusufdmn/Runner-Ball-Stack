@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BallTrigger : MonoBehaviour
 {
+    private void OnDisable()
+    {
+        gameObject.GetComponent<RotateInAxisX>().enabled = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

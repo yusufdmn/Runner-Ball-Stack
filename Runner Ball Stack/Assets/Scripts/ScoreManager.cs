@@ -19,18 +19,31 @@ public class ScoreManager : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] DiamondTextUpdater diamondTextUpdater;
     public int ballWorth;
     public int currentScore;
-    //public int multiplierFactor = 1;
 
     public void GetBallWorth(int factor)
     {
-        currentScore += ballWorth * factor;
+        currentScore += (ballWorth * factor);
+        Debug.Log(currentScore);
+
     }
 
     public void MultiplyTheScore(int factor)
     {
-        currentScore *= factor;
+        currentScore *= factor; 
+    }
+
+    public void CollectDiamond(int diamondWorth)
+    {
+        currentScore += diamondWorth;
+        diamondTextUpdater.UpdateDiamondText();
+    }
+
+    public void FinishGame()
+    {
+        DiamondData.Instance.SaveDiamonds(currentScore);
     }
 
 }

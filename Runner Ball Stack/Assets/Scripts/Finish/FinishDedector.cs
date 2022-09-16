@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FinishDedector : MonoBehaviour
 {
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "ThrowBall")

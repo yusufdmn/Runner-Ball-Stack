@@ -9,7 +9,7 @@ public class DiamondTrigger : MonoBehaviour
     {
         if(other.tag == "FirstBall" || other.tag == "ball")
         {
-            ScoreManager.Instance.currentScore += diamondWorth;
+            ScoreManager.Instance.CollectDiamond(diamondWorth);
             //DiamondData.Instance.AddOrReduceDiamond(diamondWorth);
             Destroy(gameObject);
         }
