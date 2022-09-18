@@ -55,10 +55,19 @@ public class GameManager : MonoBehaviour
         StartCoroutine(NextLevel());
     }
 
+    public void Failed()
+    {
+        StackManager.Instance.gameObject.SetActive(false);
+        Camera.main.GetComponent<CameraMovement>().enabled = false;
+        isGameFinished = true;
+        CanvasManager.Instance.DisplayFailPanel();
+    }
+
     IEnumerator NextLevel()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
 
 }

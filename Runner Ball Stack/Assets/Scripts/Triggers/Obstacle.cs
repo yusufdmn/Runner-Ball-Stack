@@ -23,6 +23,8 @@ public class Obstacle : MonoBehaviour
     {
         StackManager.Instance.stackedBalls.Remove(ball);
         Destroy(ball);
+        if (StackManager.Instance.stackedBalls.Count < 1)
+            GameManager.Instance.Failed();
     }
 
     private void AssignNewFirstBall(GameObject newFirstBall)

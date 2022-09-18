@@ -7,7 +7,8 @@ public class DiamondTextUpdater : MonoBehaviour {
 
     int currentDiamond;
     [SerializeField] Text diamondText;
-    
+    [SerializeField] Text diamondTextAtEnd;
+
     private void Start()
     {
         StartCoroutine(GetDiamondCountAtStart());
@@ -16,6 +17,7 @@ public class DiamondTextUpdater : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.1f);
         currentDiamond = DiamondData.Instance.diamond;
+        diamondTextAtEnd.text = currentDiamond.ToString();
         UpdateDiamondText();
     }
 

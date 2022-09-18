@@ -5,25 +5,112 @@ using DG.Tweening;
 
 public class CircleEnd : Finish
 {
-    public bool areCirclesFull;
+    public bool areCirclesFull = false;
+    bool areBallsFinished = false;
+
     [SerializeField] GameObject circles;
     List<GameObject> stackedBalls;
     [SerializeField] float flyDuration;
+    int indexOfNextCircle;
+    int circleAmount;
+    Vector3[] circlePositions;
+
+    Vector3 cameraPos = new Vector3(-2, 6, -5);
+    Vector3 cameraAngle = new Vector3(35, 0, 0);
+
+    [SerializeField] Transform lastSpot;
     private void Start()
     {
+        SetCamera();
+
+        StackManager.Instance.MoveBallsToOrigin();
+        Destroy(StackManager.Instance.gameObject, 0.7f);
+
+        circleAmount = circles.transform.childCount;
+        circlePositions = new Vector3[circleAmount];
+        for (int i = 0; i < circleAmount; i++)
+        {
+            circlePositions[i] = circles.transform.GetChild(i).position;
+        }
         stackedBalls = StackManager.Instance.stackedBalls;
         stackedBalls[0].GetComponent<FirstBallMoveForward>().enabled = false;
-        Vector3 newCamOffset = new Vector3(-2, 0, 3);
-        Vector3 newCamAngle = new Vector3(90, 0, 0);
-        Camera.main.GetComponent<CameraMovement>().isFinished = true;
+
     }
+
     void Update()
     {
-        if (!areCirclesFull)
+        if (stackedBalls.Count <= 0)
+            return;
+
+        Vector3 moveVector = new Vector3(0, 0, 7);
+        
+        foreach (GameObject ball in stackedBalls)
+            ball.transform.Translate(moveVector * Time.deltaTime, Space.World);
+    }
+
+    public IEnumerator FlyNextBallToCircle()
+    {
+        yield return new WaitForEndOfFrame();
+        areCirclesFull = CheckIfCirclesFull();
+
+        if (stackedBalls.Count > 0)
         {
-            Vector3 circlePos = circles.transform.GetChild(0).position;
+            Vector3 circlePos = circlePositions[indexOfNextCircle];
             circlePos.y += 0.7f;
             stackedBalls[0].transform.DOMove(circlePos, flyDuration);
+            indexOfNextCircle++;
+            stackedBalls.Remove(stackedBalls[0]);
+
+
+            if (stackedBalls.Count < 2)
+                StartCoroutine(LaunchEndOfTheGame());
         }
+    }
+
+    public IEnumerator FlyNextBallToLastSpot()
+    {
+        yield return new WaitForEndOfFrame();
+        Vector3 targetPos = lastSpot.position;
+        targetPos.y += 0.5f;
+        stackedBalls[0].transform.DOMove(targetPos, flyDuration);
+        indexOfNextCircle++;
+        stackedBalls.Remove(stackedBalls[0]);
+
+
+        if (stackedBalls.Count < 2)
+            StartCoroutine(LaunchEndOfTheGame());
+    }
+
+
+    private bool CheckIfCirclesFull()
+    {
+        bool isFull = (indexOfNextCircle >= circleAmount-1) ? true : false;
+        return isFull;
+    }
+
+    void SetCamera()
+    {
+        Camera.main.GetComponent<CameraMovement>().MoveAndSetAngle(cameraPos, cameraAngle);
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "ball" || other.tag == "FirstBall")
+        {
+            other.tag = "Untagged";
+            if (!areCirclesFull)
+                StartCoroutine(FlyNextBallToCircle());
+            else
+                StartCoroutine(FlyNextBallToLastSpot());
+            areCirclesFull = CheckIfCirclesFull();
+
+        }
+    }
+
+    IEnumerator LaunchEndOfTheGame()
+    {
+        yield return new WaitForSeconds(3f);
+        GameManager.Instance.EndTheGame();
     }
 }

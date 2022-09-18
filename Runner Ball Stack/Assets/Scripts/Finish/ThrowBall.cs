@@ -22,12 +22,7 @@ public class ThrowBall : Finish
     {
         SetStackedBallsToThrow();
         SetCamera();
-        Destroy(StackManager.Instance.gameObject, 0.5f);
-        foreach (GameObject ball in stackedBalls)
-        {
-            Destroy(ball.GetComponent<BallTrigger>());
-        }
-
+        Destroy(StackManager.Instance.gameObject, 1.2f);
     }
     void Update() 
     {
@@ -40,7 +35,21 @@ public class ThrowBall : Finish
 
         if (canThrow)
         {                
-            if (/*Input.GetKeyDown(KeyCode.Space) || */Input.GetTouch(0).phase == TouchPhase.Began)
+
+            if(Input.touchCount > 0)
+            {
+                if(Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    ThrowNextBall(throwSpeed);
+                    if (stackedBalls.Count < 1)
+                    {
+                        StartCoroutine(LaunchEndOfTheGame());
+                    }
+                    MoveBallsToLine();
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 ThrowNextBall(throwSpeed);
                 if(stackedBalls.Count < 1)
