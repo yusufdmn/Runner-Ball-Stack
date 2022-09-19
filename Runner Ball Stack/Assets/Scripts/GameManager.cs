@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] CanvasManager canvasManager;
+
     [SerializeField] GameObject firstBall;
     FirstBallMoveForward firstBallMoveForward;
     RotateInAxisX rotateInAxisX;
@@ -29,8 +31,11 @@ public class GameManager : MonoBehaviour
     public bool isFinishModeStarted;
     public bool isGameFinished;
 
+    CameraMovement cameraMovement;
+
     private void Start()
     {
+        cameraMovement = Camera.main.GetComponent<CameraMovement>();
         firstBallMoveForward = firstBall.GetComponent<FirstBallMoveForward>();
         rotateInAxisX = firstBall.GetComponent<RotateInAxisX>();
     }
@@ -38,7 +43,7 @@ public class GameManager : MonoBehaviour
     public void StartTheGame()
     {
         isGameStarted = true;
-        CanvasManager.Instance.HideMainMenu();
+        canvasManager.HideMainMenu();
         firstBallMoveForward.enabled = true;
         rotateInAxisX.rotateSpeed = 230;
     }
@@ -46,22 +51,29 @@ public class GameManager : MonoBehaviour
     public void EndTheGame()
     {
         isGameFinished = true;
-        CanvasManager.Instance.DisplayEndPanel();
+        canvasManager.DisplayEndPanel();
     }
 
-    public void PassToNextLevel()
+    public void CompleteThelevel()
     {
-        ScoreManager.Instance.FinishGame();
+        ScoreManager.Instance.FinishLevelSuccessfully();
         StartCoroutine(NextLevel());
     }
 
     public void Failed()
     {
         StackManager.Instance.gameObject.SetActive(false);
-        Camera.main.GetComponent<CameraMovement>().enabled = false;
+        cameraMovement.enabled = false;
         isGameFinished = true;
-        CanvasManager.Instance.DisplayFailPanel();
+        canvasManager.DisplayFailPanel();
     }
+
+    public void RetryLevel()
+    {
+        ScoreManager.Instance.SkipLevel();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
     IEnumerator NextLevel()
     {

@@ -8,7 +8,7 @@ public class DiamondTextUpdater : MonoBehaviour {
     int currentDiamond;
     [SerializeField] Text diamondText;
     [SerializeField] Text diamondTextAtEnd;
-
+    [SerializeField] DiamondDataScriptable diamondData;
     private void Start()
     {
         StartCoroutine(GetDiamondCountAtStart());
@@ -16,14 +16,15 @@ public class DiamondTextUpdater : MonoBehaviour {
     IEnumerator GetDiamondCountAtStart()
     {
         yield return new WaitForSeconds(0.1f);
-        currentDiamond = DiamondData.Instance.diamond;
+        currentDiamond = diamondData.diamond;
+        //currentDiamond = DiamondData.Instance.diamond;
         diamondTextAtEnd.text = currentDiamond.ToString();
         UpdateDiamondText();
     }
 
     public void UpdateDiamondText()
     {
-        int totalDiamond = currentDiamond + ScoreManager.Instance.currentScore;
+        int totalDiamond = currentDiamond + diamondData.levelScore;
 
        // currentDiamond += ScoreManager.Instance.currentScore;
         diamondText.text = totalDiamond.ToString();

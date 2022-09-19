@@ -5,7 +5,6 @@ using DG.Tweening;
 
 public class ScoreMultiplierTriggers : MonoBehaviour
 {
-    ScoreManager scoreManager;
     [SerializeField] int multiplierFactor;
     Transform child;
 
@@ -17,7 +16,6 @@ public class ScoreMultiplierTriggers : MonoBehaviour
         normalScale = new Vector3(1, 1, 1);
         bigScale = new Vector3(1.3f, 1.3f, 1.3f);
         child = transform.GetChild(0);
-        scoreManager = ScoreManager.Instance;
     }
 
 
@@ -27,7 +25,7 @@ public class ScoreMultiplierTriggers : MonoBehaviour
         {
             other.tag = "Untagged";
             other.gameObject.SetActive(false);
-            scoreManager.GetBallWorth(multiplierFactor);
+            ScoreManager.Instance.GetBallWorth(multiplierFactor);
             child.DOScale(bigScale, 0.4f).OnComplete(() =>
                {
                    child.DOScale(normalScale, 0.3f);

@@ -11,16 +11,14 @@ public class EarnButton : MonoBehaviour
     [SerializeField] int maxWheelScore;
     [SerializeField] int midWheelScore;
     [SerializeField] int minWheelScore;
-    ScoreManager scoreManager;
+
     int earnedWheelScore;
 
     [SerializeField] Text earnText;
 
     bool isEarnButtonClicked;
-    private void Start()
-    {
-        scoreManager = ScoreManager.Instance;
-    }
+
+    [SerializeField] DiamondDataScriptable diamondData;
 
     private void Update()
     {
@@ -36,7 +34,7 @@ public class EarnButton : MonoBehaviour
         else
             earnedWheelScore = minWheelScore;
 
-        earnText.text = (earnedWheelScore * scoreManager.currentScore).ToString();
+        earnText.text = (earnedWheelScore * diamondData.levelScore).ToString();
     }
 
     public void EarnWithAd()
@@ -44,8 +42,8 @@ public class EarnButton : MonoBehaviour
         isEarnButtonClicked = true;
         adWheelArrow.enabled = false;
 
-        scoreManager.MultiplyTheScore(earnedWheelScore);
-        GameManager.Instance.PassToNextLevel();
+        ScoreManager.Instance.MultiplyTheScore(earnedWheelScore);
+        GameManager.Instance.CompleteThelevel();
     }
 
 }

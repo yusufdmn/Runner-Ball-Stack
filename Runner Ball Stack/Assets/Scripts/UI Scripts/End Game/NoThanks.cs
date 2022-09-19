@@ -6,6 +6,6 @@ public class NoThanks : MonoBehaviour
 {
     public void NoThanksButton()
     {
-        GameManager.Instance.PassToNextLevel();
+        GameManager.Instance.CompleteThelevel();
     }
 }

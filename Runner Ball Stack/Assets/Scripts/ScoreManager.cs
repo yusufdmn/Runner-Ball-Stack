@@ -21,29 +21,35 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] DiamondTextUpdater diamondTextUpdater;
     public int ballWorth;
-    public int currentScore;
+  //  public int currentScore;
+
+    [SerializeField] DiamondDataScriptable diamondData;
 
     public void GetBallWorth(int factor)
     {
-        currentScore += (ballWorth * factor);
-        Debug.Log(currentScore);
-
+        diamondData.levelScore += (ballWorth * factor);
     }
 
     public void MultiplyTheScore(int factor)
     {
-        currentScore *= factor; 
+        diamondData.levelScore *= factor; 
     }
 
     public void CollectDiamond(int diamondWorth)
     {
-        currentScore += diamondWorth;
+        diamondData.levelScore += diamondWorth;
         diamondTextUpdater.UpdateDiamondText();
     }
 
-    public void FinishGame()
+    public void SkipLevel()
     {
-        DiamondData.Instance.SaveDiamonds(currentScore);
+        diamondData.ResetLevelScore();
+    }
+
+    public void FinishLevelSuccessfully()
+    {
+        //DiamondData.Instance.SaveDiamonds(currentScore);
+        diamondData.SaveScore();
     }
 
 }
