@@ -15,7 +15,7 @@ public class CircleEnd : Finish
     int circleAmount;
     Vector3[] circlePositions;
 
-    Vector3 cameraPos = new Vector3(-2, 6, -5);
+    Vector3 cameraPos = new Vector3(-2, 2, -4);
     Vector3 cameraAngle = new Vector3(35, 0, 0);
 
     [SerializeField] Transform lastSpot;
@@ -24,7 +24,7 @@ public class CircleEnd : Finish
         SetCamera();
 
         StackManager.Instance.MoveBallsToOrigin();
-        Destroy(StackManager.Instance.gameObject, 0.7f);
+        Destroy(StackManager.Instance.gameObject);
 
         circleAmount = circles.transform.childCount;
         circlePositions = new Vector3[circleAmount];

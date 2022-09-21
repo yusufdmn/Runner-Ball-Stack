@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] DiamondDataScriptable diamondData;
 
-    public void GetBallWorth(int factor)
+    public void GetBallWorthASScore(int factor)
     {
         diamondData.levelScore += (ballWorth * factor);
     }

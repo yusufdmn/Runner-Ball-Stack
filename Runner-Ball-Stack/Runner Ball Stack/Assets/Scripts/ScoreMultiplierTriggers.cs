@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class ScoreMultiplierTriggers : MonoBehaviour
+public class ScoreMultiplierTriggers : ScoreMultiplier
 {
-    [SerializeField] int multiplierFactor;
     Transform child;
 
     Vector3 bigScale;
@@ -17,20 +16,23 @@ public class ScoreMultiplierTriggers : MonoBehaviour
         bigScale = new Vector3(1.3f, 1.3f, 1.3f);
         child = transform.GetChild(0);
     }
-
+    
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "ball" || other.tag == "FirstBall")
         {
+            base.GetBallWorthASscore();
             other.tag = "Untagged";
             other.gameObject.SetActive(false);
-            ScoreManager.Instance.GetBallWorth(multiplierFactor);
             child.DOScale(bigScale, 0.4f).OnComplete(() =>
                {
                    child.DOScale(normalScale, 0.3f);
                });
         }
     }
+
+
+
 
 }
