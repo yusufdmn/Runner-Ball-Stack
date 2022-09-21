@@ -5,6 +5,11 @@ using DG.Tweening;
 
 public class CircleEnd : Finish
 {
+    [SerializeField] GameObject lovePanel;
+
+    [SerializeField] ParticleSystem confetti1;
+    [SerializeField] ParticleSystem confetti2;
+
     public bool areCirclesFull = false;
     bool areBallsFinished = false;
 
@@ -76,11 +81,9 @@ public class CircleEnd : Finish
         indexOfNextCircle++;
         stackedBalls.Remove(stackedBalls[0]);
 
-
         if (stackedBalls.Count < 2)
             StartCoroutine(LaunchEndOfTheGame());
     }
-
 
     private bool CheckIfCirclesFull()
     {
@@ -110,7 +113,10 @@ public class CircleEnd : Finish
 
     IEnumerator LaunchEndOfTheGame()
     {
+        confetti1.Play();
+        confetti2.Play();
         yield return new WaitForSeconds(3f);
-        GameManager.Instance.EndTheGame();
+
+        lovePanel.SetActive(true);
     }
 }
