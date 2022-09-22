@@ -32,15 +32,15 @@ public class StackManager : MonoBehaviour
     void Update()
     {
         FollowNextBall();
-        float x = Input.GetAxis("Horizontal");
+        /*float x = Input.GetAxis("Horizontal");
         if (x != 0)
             MoveBalls();
         else
-            MoveBallsToOrigin();
-        /*if (Input.touchCount > 0)
+            MoveBallsToOrigin();*/
+        if (Input.touchCount > 0)
             MoveBalls();
         else
-            MoveBallsToOrigin();*/
+            MoveBallsToOrigin();
 
 
 

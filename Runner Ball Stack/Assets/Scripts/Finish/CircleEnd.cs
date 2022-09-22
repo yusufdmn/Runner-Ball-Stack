@@ -5,8 +5,6 @@ using DG.Tweening;
 
 public class CircleEnd : Finish
 {
-    [SerializeField] GameObject lovePanel;
-
     [SerializeField] ParticleSystem confetti1;
     [SerializeField] ParticleSystem confetti2;
 
@@ -101,7 +99,7 @@ public class CircleEnd : Finish
     {
         if (other.tag == "ball" || other.tag == "FirstBall")
         {
-            other.tag = "Untagged";
+            other.tag = "PassedLine";
             if (!areCirclesFull)
                 StartCoroutine(FlyNextBallToCircle());
             else
@@ -116,7 +114,6 @@ public class CircleEnd : Finish
         confetti1.Play();
         confetti2.Play();
         yield return new WaitForSeconds(3f);
-
-        lovePanel.SetActive(true);
+        GameManager.Instance.EndTheGame();
     }
 }

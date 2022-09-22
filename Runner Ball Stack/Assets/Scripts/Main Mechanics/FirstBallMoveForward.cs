@@ -23,7 +23,7 @@ public class FirstBallMoveForward : MonoBehaviour
     {
         KeepBallOnWay();
 
-        /*if (Input.touchCount > 0)
+        if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
 
@@ -34,13 +34,13 @@ public class FirstBallMoveForward : MonoBehaviour
         {
             moveVector = new Vector3(0, 0, speedForward);
             transform.Translate(moveVector * Time.deltaTime, Space.World);
-        }*/
+        }
 
-        x = Input.GetAxis("Horizontal");
+        /*x = Input.GetAxis("Horizontal");
 
         moveVector = new Vector3(x * speedSide, 0, speedForward);
         transform.Translate(moveVector * Time.deltaTime, Space.World);
-       
+       */
 
         //#if UNITY_ANDROID
         /*   if (Input.touchCount > 0)

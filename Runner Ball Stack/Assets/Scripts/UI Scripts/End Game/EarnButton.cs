@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class EarnButton : MonoBehaviour
 {
+    [SerializeField] UITweenAnimation uITweenAnimation;
+
     [SerializeField] AdWheelArrow adWheelArrow;
     [SerializeField] RectTransform wheelArrowTransform;
     float z;
@@ -25,6 +27,11 @@ public class EarnButton : MonoBehaviour
         if (isEarnButtonClicked)
             return;
 
+        FindEarnedWheelValue();
+        earnText.text = (earnedWheelScore * diamondData.levelScore).ToString();
+    }
+
+    void FindEarnedWheelValue() {
         z = wheelArrowTransform.localRotation.z;
 
         if (Mathf.Abs(z) < Mathf.Abs(0.15f))
@@ -33,17 +40,17 @@ public class EarnButton : MonoBehaviour
             earnedWheelScore = midWheelScore;
         else
             earnedWheelScore = minWheelScore;
-
-        earnText.text = (earnedWheelScore * diamondData.levelScore).ToString();
     }
 
     public void EarnWithAd()
     {
+        StartCoroutine(uITweenAnimation.Animate());
+        
         isEarnButtonClicked = true;
         adWheelArrow.enabled = false;
 
         ScoreManager.Instance.MultiplyTheScore(earnedWheelScore);
-        GameManager.Instance.CompleteThelevel();
+       // GameManager.Instance.CompleteThelevel();
     }
 
 }

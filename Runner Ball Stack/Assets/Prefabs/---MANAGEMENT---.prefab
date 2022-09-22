@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 6640279958002928905}
   - component: {fileID: 6640279958002928904}
   - component: {fileID: 6640279958002928906}
+  - component: {fileID: 8861625440354943779}
   m_Layer: 0
   m_Name: Canvas Manager
   m_TagString: Untagged
@@ -107,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0effd83094ea3e4d9724a9aa3c334dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 0}
   hidedMenu: {fileID: 0}
   endPanel: {fileID: 0}
   failPanel: {fileID: 0}
@@ -146,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dcac2edbf43574180a86b4fb1a8616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uITweenAnimation: {fileID: 0}
   adWheelArrow: {fileID: 0}
   wheelArrowTransform: {fileID: 0}
   maxWheelScore: 8
@@ -165,6 +168,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a274302d9daf09846b0dca53ade1338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8861625440354943779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640279958002928900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7fcdfc8a8ca08419fcb58f3b6d56d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diamondData: {fileID: 11400000, guid: 049b840d7ade7cb41b37270bac05fbac, type: 2}
+  diamond: {fileID: 4263393491717261865, guid: a54151829040c62458631f1f60a86da8, type: 3}
+  target: {fileID: 0}
+  start: {fileID: 0}
+  parent: {fileID: 0}
+  ease: 26
+  duration: 1.2
 --- !u!1 &6640279958443098075
 GameObject:
   m_ObjectHideFlags: 0

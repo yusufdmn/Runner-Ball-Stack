@@ -8,7 +8,7 @@ public class CircleEndMuliplier : ScoreMultiplier
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Untagged")
+        if (other.tag == "PassedLine")
         {
             base.GetBallWorthASscore();
             other.tag = "Untagged";

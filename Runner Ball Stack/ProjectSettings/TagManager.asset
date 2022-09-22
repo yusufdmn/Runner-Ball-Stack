@@ -11,6 +11,7 @@ TagManager:
   - ThrowBall
   - diamond
   - CircleEnd
+  - PassedLine
   layers:
   - Default
   - TransparentFX

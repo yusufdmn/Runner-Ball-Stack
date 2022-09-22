@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class DiamondTextUpdater : MonoBehaviour {
 
     int currentDiamond;
-    [SerializeField] Text diamondText;
-    [SerializeField] Text diamondTextAtEnd;
+    public Text diamondText;
+    public Text diamondTextAtEnd;
     [SerializeField] DiamondDataScriptable diamondData;
     private void Start()
     {
@@ -17,7 +17,6 @@ public class DiamondTextUpdater : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.1f);
         currentDiamond = diamondData.diamond;
-        //currentDiamond = DiamondData.Instance.diamond;
         diamondTextAtEnd.text = currentDiamond.ToString();
         UpdateDiamondText();
     }
@@ -29,5 +28,6 @@ public class DiamondTextUpdater : MonoBehaviour {
        // currentDiamond += ScoreManager.Instance.currentScore;
         diamondText.text = totalDiamond.ToString();
     }
+
 
 }

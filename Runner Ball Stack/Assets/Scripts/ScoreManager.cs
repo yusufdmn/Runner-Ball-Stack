@@ -48,8 +48,23 @@ public class ScoreManager : MonoBehaviour
 
     public void FinishLevelSuccessfully()
     {
-        //DiamondData.Instance.SaveDiamonds(currentScore);
         diamondData.SaveScore();
     }
 
+
+    public IEnumerator AnimateToNewScore()
+    {
+        int preScore = diamondData.diamond;
+        int newScore = diamondData.diamond + diamondData.levelScore;
+        Debug.Log("Pre: " + preScore + "   new:" + newScore);
+        int number = preScore;
+        while (number <= newScore)
+        {
+            number += 12;
+            diamondTextUpdater.diamondTextAtEnd.text = number.ToString();
+            yield return new WaitForSeconds(0.001f);
+        }
+        yield return new WaitForSeconds(3);
+        GameManager.Instance.CompleteThelevel();
+    }
 }
