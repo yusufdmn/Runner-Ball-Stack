@@ -83,7 +83,7 @@ public class CircleEnd : Finish
             StartCoroutine(LaunchEndOfTheGame());
     }
 
-    private bool CheckIfCirclesFull()
+    public bool CheckIfCirclesFull()
     {
         bool isFull = (indexOfNextCircle >= circleAmount-1) ? true : false;
         return isFull;
@@ -94,20 +94,6 @@ public class CircleEnd : Finish
         Camera.main.GetComponent<CameraMovement>().MoveAndSetAngle(cameraPos, cameraAngle);
     }
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "ball" || other.tag == "FirstBall")
-        {
-            other.tag = "PassedLine";
-            if (!areCirclesFull)
-                StartCoroutine(FlyNextBallToCircle());
-            else
-                StartCoroutine(FlyNextBallToLastSpot());
-            areCirclesFull = CheckIfCirclesFull();
-
-        }
-    }
 
     IEnumerator LaunchEndOfTheGame()
     {

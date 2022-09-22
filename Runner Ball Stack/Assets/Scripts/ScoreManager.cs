@@ -38,7 +38,7 @@ public class ScoreManager : MonoBehaviour
     public void CollectDiamond(int diamondWorth)
     {
         diamondData.levelScore += diamondWorth;
-        diamondTextUpdater.UpdateDiamondText();
+        diamondTextUpdater.UpdateTextWithCurrentScore();
     }
 
     public void SkipLevel()
