@@ -13,6 +13,7 @@ public class PowerUpObject : MonoBehaviour
     [SerializeField] Text priceText;
     [SerializeField] Button upgradeButton;
 
+    [SerializeField] ExtraUpManager extraUpManager;
     private void Start()
     {
         UpdateTexts();
@@ -35,8 +36,9 @@ public class PowerUpObject : MonoBehaviour
     public void Upgrade()
     {
         int price = powerUp.price;
-        shopManager.UpgradePowerUp(powerUp, price);
+            shopManager.UpgradePowerUp(powerUp, price);
         UpdateTexts();
+        extraUpManager.AddExtraOneBall();
     }
 
 }

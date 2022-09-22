@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] BallRotation ballRotation;
     [SerializeField] CanvasManager canvasManager;
 
     [SerializeField] GameObject firstBall;
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
         isGameStarted = true;
         canvasManager.HideMainMenu();
         firstBallMoveForward.enabled = true;
-        rotateInAxisX.rotateSpeed = 230;
+        ballRotation.StartRotation();        
     }
 
     public void EndTheGame()
