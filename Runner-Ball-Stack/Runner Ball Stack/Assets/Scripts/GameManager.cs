@@ -33,6 +33,12 @@ public class GameManager : MonoBehaviour
 
     CameraMovement cameraMovement;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+    }
+
     private void Start()
     {
         cameraMovement = Camera.main.GetComponent<CameraMovement>();
