@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ThrowBall : Finish
 {
-    [SerializeField] ParticleSystem confetti1;
-    [SerializeField] ParticleSystem confetti2;
-
     private bool canThrow;
     List<GameObject> stackedBalls;
 
@@ -64,6 +61,12 @@ public class ThrowBall : Finish
         }
     }
 
+    IEnumerator LaunchEndOfTheGame()
+    {
+        yield return new WaitForSeconds(3f);
+        GameManager.Instance.EndTheGame();
+    }
+
     void ThrowNextBall(float throwSpeed)
     {
         Rigidbody rigidbody = stackedBalls[0].GetComponent<Rigidbody>();
@@ -93,13 +96,5 @@ public class ThrowBall : Finish
         {
             ball.transform.DOMoveZ(ball.transform.position.z + 1, 1f);
         }
-    }
-
-    IEnumerator LaunchEndOfTheGame()
-    {
-        confetti1.Play();
-        confetti2.Play();
-        yield return new WaitForSeconds(4f);
-        GameManager.Instance.EndTheGame();
     }
 }

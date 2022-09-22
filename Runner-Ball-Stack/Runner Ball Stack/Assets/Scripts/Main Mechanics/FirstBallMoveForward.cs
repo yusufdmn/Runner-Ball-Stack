@@ -5,7 +5,6 @@ using UnityEngine;
 public class FirstBallMoveForward : MonoBehaviour
 {
     float x;
-    float maxPosX = 2.5f;
 
     [SerializeField] float speedForward = 0;
     [SerializeField] float speedSide = 7;
@@ -21,12 +20,9 @@ public class FirstBallMoveForward : MonoBehaviour
 
     void Update()
     {
-        KeepBallOnWay();
-
-        /*if (Input.touchCount > 0)
+        if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
-
             moveVector = new Vector3(touch.deltaPosition.x * speedSideMobil, 0, speedForward);
             transform.Translate(moveVector * Time.deltaTime, Space.World);
         }
@@ -34,14 +30,7 @@ public class FirstBallMoveForward : MonoBehaviour
         {
             moveVector = new Vector3(0, 0, speedForward);
             transform.Translate(moveVector * Time.deltaTime, Space.World);
-        }*/
-
-        x = Input.GetAxis("Horizontal");
-
-        moveVector = new Vector3(x * speedSide, 0, speedForward);
-        transform.Translate(moveVector * Time.deltaTime, Space.World);
-       
-
+        }
         //#if UNITY_ANDROID
         /*   if (Input.touchCount > 0)
            {
@@ -71,13 +60,6 @@ public class FirstBallMoveForward : MonoBehaviour
             speedForward += 0.07f;
             yield return new WaitForEndOfFrame();
         }
-    }
-
-    void KeepBallOnWay()
-    {
-        Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(transform.position.x, -maxPosX, maxPosX);
-        transform.position = pos;
     }
 
 }

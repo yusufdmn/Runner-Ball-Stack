@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Try: MonoBehaviour
+public class Try
 {
-    [SerializeField] GameManager lovePanel;
+    [SerializeField] DiamondDataScriptable diamondData;
+    [SerializeField] ScoreManager scoreManager;
 
- 
 }
