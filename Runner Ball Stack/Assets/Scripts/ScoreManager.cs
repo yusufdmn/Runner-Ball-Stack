@@ -64,7 +64,7 @@ public class ScoreManager : MonoBehaviour
             diamondTextUpdater.diamondTextAtEnd.text = number.ToString();
             yield return new WaitForSeconds(0.001f);
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         GameManager.Instance.CompleteThelevel();
     }
 }

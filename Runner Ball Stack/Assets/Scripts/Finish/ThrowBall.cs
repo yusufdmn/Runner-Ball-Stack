@@ -29,6 +29,8 @@ public class ThrowBall : Finish
     }
     void Update() 
     {
+        if (stackedBalls.Count <= 0)
+            return;
         time += Time.deltaTime;
         if (time > timeGap)
         {
@@ -37,9 +39,8 @@ public class ThrowBall : Finish
         }
 
         if (canThrow)
-        {                
-
-            if(Input.touchCount > 0)
+        {
+            if (Input.touchCount > 0)
             {
                 if(Input.GetTouch(0).phase == TouchPhase.Began)
                 {
@@ -91,7 +92,7 @@ public class ThrowBall : Finish
     {
         foreach (GameObject ball in stackedBalls)
         {
-            ball.transform.DOMoveZ(ball.transform.position.z + 1, 1f);
+            ball.transform.DOMoveZ(ball.transform.position.z + 1, 0.3f);
         }
     }
 

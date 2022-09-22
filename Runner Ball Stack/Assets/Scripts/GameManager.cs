@@ -57,7 +57,9 @@ public class GameManager : MonoBehaviour
     public void CompleteThelevel()
     {
         ScoreManager.Instance.FinishLevelSuccessfully();
-        StartCoroutine(NextLevel());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        //StartCoroutine(NextLevel());
     }
 
     public void Failed()
