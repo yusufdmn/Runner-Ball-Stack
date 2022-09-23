@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     [SerializeField] DiamondDataScriptable diamondData;
-    [SerializeField] List<PowerUpObject> powerUpObjects;
+    [SerializeField] List<PowerUpUIObject> powerUpUIObjects;
     [SerializeField] DiamondTextUpdater diamondTextUpdater;
 
     private void Start()
@@ -16,7 +16,7 @@ public class ShopManager : MonoBehaviour
     public void SetUpgradeBtnInteractivity()
     {
         int diamond = diamondData.diamond;
-        foreach (PowerUpObject powerUp in powerUpObjects)
+        foreach (PowerUpUIObject powerUp in powerUpUIObjects)
         {
             powerUp.SetButtonInteractivity(diamond);
         }

@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4462271175126957491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814349934641439197}
+  - component: {fileID: 2687556914339162745}
+  m_Layer: 0
+  m_Name: Power Up Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &814349934641439197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462271175126957491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6640279958443098076}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2687556914339162745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462271175126957491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a14621932b2cd64c94dac8929750e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUp: {fileID: 11400000, guid: 55e55295481fceb49910f8c79a9c2604, type: 2}
+  ball: {fileID: 5732051088436779669, guid: 333ab1ee1ab40d64b9706feea9350e82, type: 3}
+  parent: {fileID: 0}
+  FirstBall: {fileID: 0}
 --- !u!1 &6634067612890031083
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +315,7 @@ Transform:
   - {fileID: 6640279958002928901}
   - {fileID: 6640279957545470159}
   - {fileID: 4531102286886519674}
+  - {fileID: 814349934641439197}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -314,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427cb242a3f21be4a8d6172d24f747f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballRotation: {fileID: 0}
   canvasManager: {fileID: 0}
   firstBall: {fileID: 0}
   isGameStarted: 0

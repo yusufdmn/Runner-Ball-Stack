@@ -22,7 +22,7 @@ public class Obstacle : MonoBehaviour
     private void DestroyBall(GameObject ball)
     {
         StackManager.Instance.stackedBalls.Remove(ball);
-        Destroy(ball);
+        ball.SetActive(false);
         if (StackManager.Instance.stackedBalls.Count < 1)
             GameManager.Instance.Failed();
     }

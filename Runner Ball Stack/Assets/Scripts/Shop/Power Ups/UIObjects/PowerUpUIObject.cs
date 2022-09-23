@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PowerUpObject : MonoBehaviour
+public class PowerUpUIObject : MonoBehaviour
 {
     [SerializeField] ShopManager shopManager;
 
@@ -13,7 +13,6 @@ public class PowerUpObject : MonoBehaviour
     [SerializeField] Text priceText;
     [SerializeField] Button upgradeButton;
 
-    [SerializeField] ExtraUpManager extraUpManager;
     private void Start()
     {
         UpdateTexts();
@@ -33,12 +32,11 @@ public class PowerUpObject : MonoBehaviour
             upgradeButton.interactable = false;
     }
 
-    public void Upgrade()
+    public virtual void Upgrade()
     {
         int price = powerUp.price;
             shopManager.UpgradePowerUp(powerUp, price);
         UpdateTexts();
-        extraUpManager.AddExtraOneBall();
     }
 
 }

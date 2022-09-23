@@ -8,13 +8,14 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject hidedMenu;
     [SerializeField] GameObject endPanel;
     [SerializeField] GameObject failPanel;
-
+    [SerializeField] GameObject extraIncomePanel;
     public void HideMainMenu()
     {
         hidedMenu.SetActive(false);
     }
     public void DisplayEndPanel()
     {
+        StartCoroutine(DisableExtraPanel());
         endPanel.SetActive(true);
         mainMenu.SetActive(false);
     }
@@ -22,5 +23,11 @@ public class CanvasManager : MonoBehaviour
     {
         failPanel.SetActive(true);
         mainMenu.SetActive(false);
+    }
+
+    IEnumerator DisableExtraPanel()
+    {
+        yield return new WaitForSeconds(1.5f);
+        extraIncomePanel.SetActive(false);
     }
 }

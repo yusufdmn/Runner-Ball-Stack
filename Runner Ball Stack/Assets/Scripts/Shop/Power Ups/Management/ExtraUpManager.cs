@@ -7,10 +7,18 @@ public class ExtraUpManager : PowerUpManager
     [SerializeField] GameObject ball;
     [SerializeField] Transform parent;
     [SerializeField] Transform FirstBall;
+    Vector3 pos;
 
     private void Start()
     {
+        SetPosition();
         AddExtraBalls();
+    }
+
+    void SetPosition()
+    {
+        pos = FirstBall.position;
+        pos.x = -10;
     }
 
     public void AddExtraBalls()
@@ -27,18 +35,10 @@ public class ExtraUpManager : PowerUpManager
         extraBall.AddComponent<RotateInAxisX>();
     }
 
-    void SetPosition(GameObject extraBall)
-    {
-        Vector3 pos = extraBall.transform.position;
-        pos.y = FirstBall.position.y;
-        extraBall.transform.position = pos;
-    }
-
     public void AddExtraOneBall()
     {
-        GameObject extraBall = Instantiate(ball, Vector3.zero, Quaternion.identity, parent);
+        GameObject extraBall = Instantiate(ball, pos, Quaternion.identity, parent);
 
-        SetPosition(extraBall);
         SetComponentSettings(extraBall);
         StackManager.Instance.stackedBalls.Add(extraBall);
     }

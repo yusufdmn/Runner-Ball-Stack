@@ -44,13 +44,11 @@ public class EarnButton : MonoBehaviour
 
     public void EarnWithAd()
     {
-        StartCoroutine(uITweenAnimation.Animate());
-        
         isEarnButtonClicked = true;
         adWheelArrow.enabled = false;
-
         ScoreManager.Instance.MultiplyTheScore(earnedWheelScore);
-       // GameManager.Instance.CompleteThelevel();
+
+        StartCoroutine(uITweenAnimation.Animate());
     }
 
 }

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class NoThanks : MonoBehaviour
 {
+    [SerializeField] UITweenAnimation uITweenAnimation;
+
     public void NoThanksButton()
     {
-        GameManager.Instance.CompleteThelevel();
+        StartCoroutine(uITweenAnimation.Animate());
+       // GameManager.Instance.CompleteThelevel();
     }
 }

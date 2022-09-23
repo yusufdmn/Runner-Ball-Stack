@@ -21,7 +21,9 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] DiamondTextUpdater diamondTextUpdater;
     public int ballWorth;
-  //  public int currentScore;
+
+    [SerializeField] CanvasManager canvasManager;
+    [SerializeField] IncomeUpManager incomeUpManager;
 
     [SerializeField] DiamondDataScriptable diamondData;
 
@@ -51,20 +53,43 @@ public class ScoreManager : MonoBehaviour
         diamondData.SaveScore();
     }
 
-
     public IEnumerator AnimateToNewScore()
     {
+        AddExtraIncome();
         int preScore = diamondData.diamond;
         int newScore = diamondData.diamond + diamondData.levelScore;
-        Debug.Log("Pre: " + preScore + "   new:" + newScore);
         int number = preScore;
+
+        int animationSpeed = 5 + ((newScore - preScore) / 150);
         while (number <= newScore)
         {
-            number += 12;
+            number += animationSpeed;
             diamondTextUpdater.diamondTextAtEnd.text = number.ToString();
             yield return new WaitForSeconds(0.001f);
         }
-        yield return new WaitForSeconds(2);
+        //StartCoroutine(AnimateDiamondText());
+        yield return new WaitForSeconds(1);
         GameManager.Instance.CompleteThelevel();
+    }
+
+    IEnumerator AnimateDiamondText()
+    {
+        int preScore = diamondData.diamond;
+        int newScore = diamondData.diamond + diamondData.levelScore;
+        int number = preScore;
+
+        int animationSpeed = 5 + ((newScore - preScore) / 150);
+        while (number <= newScore)
+        {
+            number += animationSpeed;
+            diamondTextUpdater.diamondTextAtEnd.text = number.ToString();
+            yield return new WaitForSeconds(0.001f);
+        }
+    }
+
+    public void AddExtraIncome()
+    {
+        int extraIncome = incomeUpManager.GetExtraIncomeAmount();
+        diamondData.levelScore += extraIncome;
     }
 }

@@ -9,6 +9,7 @@ public class PowerUpScriptable : ScriptableObject
     public int price;
     public int level;
     public int[] priceList;
+    public int[] incomeList;
 
     public void Upgrade()
     {
