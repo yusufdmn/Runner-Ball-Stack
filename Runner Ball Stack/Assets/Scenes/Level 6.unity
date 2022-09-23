@@ -15803,6 +15803,11 @@ PrefabInstance:
       propertyPath: FirstBall
       value: 
       objectReference: {fileID: 413539557}
+    - target: {fileID: 4796437768350893971, guid: a1685082a4cd2c844bac0a882874749a,
+        type: 3}
+      propertyPath: m_Text
+      value: Level 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5568320239262943049, guid: a1685082a4cd2c844bac0a882874749a,
         type: 3}
       propertyPath: stackedBalls.Array.data[0]

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CircleEndMultiplier : ScoreMultiplier
+public class CircleEndTrigger: MonoBehaviour
 {
     [SerializeField] CircleEnd circleEnd;
 
