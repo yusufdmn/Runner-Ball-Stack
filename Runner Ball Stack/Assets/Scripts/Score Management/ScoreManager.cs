@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance { get { return instance; } }
     private void Awake()
     {
+        diamondData.SetDiamondData();
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -26,7 +27,6 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] IncomeUpManager incomeUpManager;
 
     [SerializeField] DiamondDataScriptable diamondData;
-
     public void GetBallWorthASScore(int factor)
     {
         diamondData.levelScore += (ballWorth * factor);
@@ -60,13 +60,14 @@ public class ScoreManager : MonoBehaviour
         int newScore = diamondData.diamond + diamondData.levelScore;
         int number = preScore;
 
-        int animationSpeed = 5 + ((newScore - preScore) / 150);
+        int animationSpeed = 5 + ((newScore - preScore) / 50);
         while (number <= newScore)
         {
             number += animationSpeed;
             diamondTextUpdater.diamondTextAtEnd.text = number.ToString();
             yield return new WaitForSeconds(0.001f);
         }
+        diamondTextUpdater.diamondTextAtEnd.text = (diamondData.diamond + diamondData.levelScore).ToString();
         //StartCoroutine(AnimateDiamondText());
         yield return new WaitForSeconds(1);
         GameManager.Instance.CompleteThelevel();

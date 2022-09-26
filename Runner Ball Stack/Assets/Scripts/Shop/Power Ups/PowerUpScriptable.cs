@@ -15,5 +15,17 @@ public class PowerUpScriptable : ScriptableObject
     {
         level++;
         price = priceList[level];
+        SaveInfo();
     }
+
+    public void SaveInfo()
+    {
+        PlayerPrefs.SetInt(name, level);
+    }
+    public void SetInfo()
+    {
+        level = PlayerPrefs.GetInt(name);
+        price = priceList[level];
+    }
+
 }

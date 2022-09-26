@@ -12,9 +12,15 @@ public class DiamondDataScriptable : ScriptableObject
     {
         diamond += levelScore;
         levelScore = 0;
+        PlayerPrefs.SetInt("diamond", diamond); 
     }
     public void ResetLevelScore()
     {
         levelScore = 0;
+    }
+
+    public void SetDiamondData()
+    {
+        diamond = PlayerPrefs.GetInt("diamond");
     }
 }

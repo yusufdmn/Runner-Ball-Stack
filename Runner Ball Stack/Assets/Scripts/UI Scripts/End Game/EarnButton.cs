@@ -13,12 +13,15 @@ public class EarnButton : MonoBehaviour
     [SerializeField] int maxWheelScore;
     [SerializeField] int midWheelScore;
     [SerializeField] int minWheelScore;
-
     int earnedWheelScore;
 
     [SerializeField] Text earnText;
 
     bool isEarnButtonClicked;
+
+    [SerializeField] Button earnButton;
+    [SerializeField] Button noButton;
+
 
     [SerializeField] DiamondDataScriptable diamondData;
 
@@ -44,10 +47,12 @@ public class EarnButton : MonoBehaviour
 
     public void EarnWithAd()
     {
+        noButton.enabled = false;
+        earnButton.enabled = false;
         isEarnButtonClicked = true;
         adWheelArrow.enabled = false;
         ScoreManager.Instance.MultiplyTheScore(earnedWheelScore);
-
+        
         StartCoroutine(uITweenAnimation.Animate());
     }
 
