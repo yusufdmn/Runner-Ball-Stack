@@ -67,6 +67,8 @@ public class ThrowBall : Finish
 
     void ThrowNextBall(float throwSpeed)
     {
+        Handheld.Vibrate();
+
         Rigidbody rigidbody = stackedBalls[0].GetComponent<Rigidbody>();
         stackedBalls[0].GetComponent<RotateInAxisX>().enabled = true;
         rigidbody.isKinematic = false;

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8fb66541feb7848814abe26a918c8f, type: 3}
   m_Name: DiamondData
   m_EditorClassIdentifier: 
-  diamond: 110
+  diamond: 0
   levelScore: 0

@@ -13,6 +13,8 @@ public class BallTrigger : MonoBehaviour
     {
         if(other.tag == "ball" && !StackManager.Instance.stackedBalls.Contains(other.gameObject))
         {
+            Handheld.Vibrate();
+
             GameObject newStackedBall = other.gameObject;
             AddBallIntoStack(newStackedBall);
         }
