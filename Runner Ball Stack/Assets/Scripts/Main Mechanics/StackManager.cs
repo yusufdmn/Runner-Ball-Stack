@@ -106,9 +106,13 @@ public class StackManager : MonoBehaviour
     public void MoveBallsToOrigin()
     {
         float origin = stackedBalls[0].transform.position.x;
-        for (int i = 1; i < stackedBalls.Count; i++)
+        stackedBalls[1].transform.DOMoveX(origin, moveSideDuration);
+
+        float x;
+        for (int i = 2; i < stackedBalls.Count; i++)
         {
-            stackedBalls[i].transform.DOMoveX(origin, moveSideDuration);
+            x = stackedBalls[i - 1].transform.position.x;
+            stackedBalls[i].transform.DOMoveX(x, moveSideDuration);
         }
     }
 }

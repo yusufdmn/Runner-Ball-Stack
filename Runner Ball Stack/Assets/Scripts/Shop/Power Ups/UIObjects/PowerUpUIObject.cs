@@ -13,9 +13,12 @@ public class PowerUpUIObject : MonoBehaviour
     [SerializeField] Text priceText;
     [SerializeField] Button upgradeButton;
 
+    Animator animator;
+
     private void Start()
     {
         UpdateTexts();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     void UpdateTexts()
@@ -29,7 +32,10 @@ public class PowerUpUIObject : MonoBehaviour
     {
         int price = powerUp.price;
         if (diamond < price)
+        {
             upgradeButton.interactable = false;
+            animator.enabled = false;
+        }
     }
 
     public virtual void Upgrade()

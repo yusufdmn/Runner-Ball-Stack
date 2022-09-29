@@ -107,6 +107,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6640279957545470160, guid: f3a1ed5c677c9494fbbef170474df56c,
         type: 3}
+      propertyPath: ballWorth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640279957545470160, guid: f3a1ed5c677c9494fbbef170474df56c,
+        type: 3}
       propertyPath: diamondData
       value: 
       objectReference: {fileID: 11400000, guid: 049b840d7ade7cb41b37270bac05fbac,
@@ -333,7 +338,8 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 5568320238420373273}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6640279957545470161, guid: f3a1ed5c677c9494fbbef170474df56c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f3a1ed5c677c9494fbbef170474df56c, type: 3}
 --- !u!4 &5568320239614725870 stripped
 Transform:

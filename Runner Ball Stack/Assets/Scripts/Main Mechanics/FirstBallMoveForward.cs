@@ -7,7 +7,7 @@ public class FirstBallMoveForward : MonoBehaviour
     float x;
     float maxPosX = 2.5f;
 
-    [SerializeField] float speedForward = 0;
+    [SerializeField] float speedForward = 1.5f;
     [SerializeField] float speedSide = 7;
     [SerializeField] float speedSideMobil = 0.4f;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConstantRotate : MonoBehaviour
 {
-    [Range(1, 250)]
+    [Range(-250, 250)]
     public float rotateSpeed;
 
     public void RotateX()

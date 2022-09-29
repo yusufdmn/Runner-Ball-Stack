@@ -92,7 +92,7 @@ public class ThrowBall : Finish
     {
         foreach (GameObject ball in stackedBalls)
         {
-            ball.transform.DOMoveZ(ball.transform.position.z + 1, 0.3f);
+            ball.transform.DOMoveZ(ball.transform.position.z + 1, 0.25f);
         }
     }
 

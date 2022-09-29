@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 5403887187305195190}
   - component: {fileID: 5618755050729247835}
   - component: {fileID: 4625366557283459619}
+  - component: {fileID: 1796622116687050311}
   m_Layer: 5
   m_Name: Upgrade Income
   m_TagString: Untagged
@@ -381,6 +382,7 @@ MonoBehaviour:
   levelText: {fileID: 5618755049617932769}
   priceText: {fileID: 5618755050528659209}
   upgradeButton: {fileID: 4625366557283459619}
+  incomeUpManager: {fileID: 0}
 --- !u!114 &5618755050729247835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,3 +469,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &1796622116687050311
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5618755050729247833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 154a7917e08aaab4692813e15cf705f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

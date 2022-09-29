@@ -91,9 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diamondData: {fileID: 11400000, guid: 049b840d7ade7cb41b37270bac05fbac, type: 2}
-  powerUpObjects:
-  - {fileID: 0}
-  - {fileID: 0}
+  powerUpUIObjects: []
   diamondTextUpdater: {fileID: 6640279958612072140}
 --- !u!1 &6640279957545470158
 GameObject:
@@ -105,7 +103,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6640279957545470159}
   - component: {fileID: 6640279957545470160}
-  - component: {fileID: 6640279957545470161}
   m_Layer: 0
   m_Name: Score Manager
   m_TagString: Untagged
@@ -140,21 +137,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diamondTextUpdater: {fileID: 6640279958612072140}
-  ballWorth: 10
+  ballWorth: 1
+  canvasManager: {fileID: 0}
+  incomeUpManager: {fileID: 0}
   diamondData: {fileID: 0}
---- !u!114 &6640279957545470161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6640279957545470158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f929e921889a4c043a376251ef960f7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diamond: 0
 --- !u!1 &6640279958002928900
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +193,7 @@ MonoBehaviour:
   hidedMenu: {fileID: 0}
   endPanel: {fileID: 0}
   failPanel: {fileID: 0}
+  extraIncomePanel: {fileID: 0}
 --- !u!114 &6640279958002928902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1dd8c8772cac441a5da4dd120fcae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uITweenAnimation: {fileID: 0}
+  earnButton: {fileID: 0}
+  noButton: {fileID: 0}
 --- !u!114 &6640279958002928904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +240,8 @@ MonoBehaviour:
   midWheelScore: 4
   minWheelScore: 2
   earnText: {fileID: 0}
+  earnButton: {fileID: 0}
+  noButton: {fileID: 0}
   diamondData: {fileID: 0}
 --- !u!114 &6640279958002928906
 MonoBehaviour:

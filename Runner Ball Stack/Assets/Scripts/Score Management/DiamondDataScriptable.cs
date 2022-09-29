@@ -21,6 +21,6 @@ public class DiamondDataScriptable : ScriptableObject
 
     public void SetDiamondData()
     {
-        diamond = PlayerPrefs.GetInt("diamond");
+        diamond = PlayerPrefs.GetInt("diamond", 250);
     }
 }
