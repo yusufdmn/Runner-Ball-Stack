@@ -4,7 +4,5 @@ using UnityEngine;
 
 public class Try: MonoBehaviour
 {
-    [SerializeField] GameManager lovePanel;
-
  
 }

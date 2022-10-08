@@ -349,8 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a96e8703d67aa4fb38237e892079cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTarget: {fileID: 0}
-  secondTarget: {fileID: 0}
+  firstTarget: {fileID: 9015656290154783440}
+  secondTarget: {fileID: 165998280333638581}
   minRandomSpeed: 0.1
   maxRandomSpeed: 0.4
   offset: {x: 0, y: 0.1, z: 0}
