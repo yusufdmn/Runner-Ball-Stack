@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using RDG;
 
 public class ThrowBall : Finish
 {
     [SerializeField] ParticleSystem confetti1;
     [SerializeField] ParticleSystem confetti2;
 
+    bool ispressed;
     private bool canThrow;
     List<GameObject> stackedBalls;
 
@@ -38,36 +40,40 @@ public class ThrowBall : Finish
             time = 0;
         }
 
-        if (canThrow)
-        {
-            if (Input.touchCount > 0)
-            {
-                if(Input.GetTouch(0).phase == TouchPhase.Began)
-                {
-                    ThrowNextBall(throwSpeed);
-                    if (stackedBalls.Count < 1)
-                    {
-                        StartCoroutine(LaunchEndOfTheGame());
-                    }
-                    MoveBallsToLine();
-                }
-            }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.touchCount > 0)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                ThrowNextBall(throwSpeed);
-                if(stackedBalls.Count < 1)
-                {
-                    StartCoroutine(LaunchEndOfTheGame());
-                }
-                MoveBallsToLine();
+                ispressed = true;
             }
+            else if (Input.GetTouch(0).phase == TouchPhase.Ended)
+                ispressed = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ispressed = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+            ispressed = false;
+
+
+        if (canThrow & ispressed)
+        {
+            ThrowNextBall(throwSpeed);
+            if (stackedBalls.Count < 1)
+            {
+                StartCoroutine(LaunchEndOfTheGame());
+            }
+            MoveBallsToLine();
+        }
+
     }
 
     void ThrowNextBall(float throwSpeed)
     {
-        Handheld.Vibrate();
+        Vibration.Vibrate(10);
 
         Rigidbody rigidbody = stackedBalls[0].GetComponent<Rigidbody>();
         stackedBalls[0].GetComponent<RotateInAxisX>().enabled = true;

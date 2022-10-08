@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RDG;
 
 public class DiamondTrigger : MonoBehaviour
 {
-    int diamondWorth = 5;
+    int diamondWorth = 1;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "FirstBall" || other.tag == "ball")
         {
-            Handheld.Vibrate();
 
+            Vibration.Vibrate(5);
+            
             ScoreManager.Instance.CollectDiamond(diamondWorth);
-            //DiamondData.Instance.AddOrReduceDiamond(diamondWorth);
             Destroy(gameObject);
         }
     }

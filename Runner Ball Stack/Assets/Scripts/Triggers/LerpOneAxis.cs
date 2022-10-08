@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class LerpOneAxis : MonoBehaviour
 {
-    [SerializeField] float lerpSpeed;
-    [SerializeField] Vector3 firstPoint;
-    [SerializeField] Vector3 secondPoint;
+    float lerpSpeed;
+    [SerializeField] Transform firstTarget;
+    [SerializeField] Transform secondTarget;
+    Vector3 firstPoint;
+    Vector3 secondPoint;
+    [SerializeField] float minRandomSpeed;
+    [SerializeField] float maxRandomSpeed;
+    [SerializeField] Vector3 offset;
     float t = 0;
     int direction;
 
     private void Start()
     {
-        firstPoint = transform.position;
-        secondPoint = transform.position;
-        firstPoint.x += 2.5f;
-        secondPoint.x += -2.5f;
+        lerpSpeed = Random.Range(minRandomSpeed, maxRandomSpeed);
+        firstPoint = firstTarget.position + offset;
+        secondPoint = secondTarget.position + offset;
+
     }
     private void Update()
     {
+
         transform.position = Vector3.Lerp(firstPoint, secondPoint, t);
         t += Time.deltaTime * lerpSpeed * direction;
         if (t >= 1)

@@ -9,6 +9,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject endPanel;
     [SerializeField] GameObject failPanel;
     [SerializeField] GameObject extraIncomePanel;
+    [SerializeField] GameObject unlockObstaclePanel;
     public void HideMainMenu()
     {
         hidedMenu.SetActive(false);
@@ -29,5 +30,10 @@ public class CanvasManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         extraIncomePanel.SetActive(false);
+    }
+
+    public void DisplayUnlockObstaclePanel()
+    {
+        unlockObstaclePanel.SetActive(true);
     }
 }

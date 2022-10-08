@@ -95,6 +95,16 @@ public class StackManager : MonoBehaviour
 
     public void MoveBalls()
     {
+       /* float x;
+        for (int i = 1; i < stackedBalls.Count; i++)
+        {
+            x = stackedBalls[i - 1].transform.position.x;
+          //  Vector3 targetPos = stackedBalls[i].transform.position;
+          //  targetPos.x = x;
+            StartCoroutine(ManipulatePosition(stackedBalls[i].transform, x));
+        }*/
+
+        
         float x;
         for(int i = 1; i < stackedBalls.Count; i++)
         {
@@ -103,8 +113,30 @@ public class StackManager : MonoBehaviour
         }
     }
 
+   /* IEnumerator Move(Transform ballTransform, Vector3 target)
+    {
+        ballTransform.position
+        yield return null;
+    }
+    
+    IEnumerator ManipulatePosition(Transform handledTransform, float targetX)
+    { 
+        int direction = ((handledTransform.position.x - targetX) > 0)? -1:1;
+        Vector3 pos = handledTransform.position;
+        float firstX = handledTransform.position.x;
+        float speed = 0.5f;
+        while(Mathf.Abs(handledTransform.position.x - firstX) !<= 0.1f)
+        {
+            pos.x += Time.deltaTime * speed * direction;
+            handledTransform.position = pos;
+        }
+        yield return null;
+    }
+*/
     public void MoveBallsToOrigin()
     {
+        if (stackedBalls.Count <= 1)
+            return;
         float origin = stackedBalls[0].transform.position.x;
         stackedBalls[1].transform.DOMoveX(origin, moveSideDuration);
 

@@ -27,6 +27,7 @@ public class DiamondTextUpdater : MonoBehaviour {
     {
         int totalDiamond = currentDiamond + diamondData.levelScore;
         diamondText.text = totalDiamond.ToString();
+        diamondTextAtEnd.text = totalDiamond.ToString();
     }
 
 

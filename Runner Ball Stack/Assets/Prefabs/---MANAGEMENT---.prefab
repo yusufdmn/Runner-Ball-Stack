@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diamondData: {fileID: 11400000, guid: 049b840d7ade7cb41b37270bac05fbac, type: 2}
   powerUpUIObjects: []
-  diamondTextUpdater: {fileID: 6640279958612072140}
+  diamondTextUpdater: {fileID: 0}
 --- !u!1 &6640279957545470158
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27c3c59549f022479d5517ce9f12a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamondTextUpdater: {fileID: 6640279958612072140}
+  diamondTextUpdater: {fileID: 0}
   ballWorth: 1
   canvasManager: {fileID: 0}
   incomeUpManager: {fileID: 0}
@@ -354,6 +354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427cb242a3f21be4a8d6172d24f747f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 0}
+  unlockObstacleManager: {fileID: 0}
   ballRotation: {fileID: 0}
   canvasManager: {fileID: 0}
   firstBall: {fileID: 0}
@@ -386,57 +388,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.07446909, y: -3.19699, z: -8.173731}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 6640279958612072139}
+  m_Children: []
   m_Father: {fileID: 6640279958443098076}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6640279958612072138
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6640279958612072139}
-  - component: {fileID: 6640279958612072140}
-  m_Layer: 0
-  m_Name: DiamondTextUpdater
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6640279958612072139
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6640279958612072138}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6640279958519258291}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6640279958612072140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6640279958612072138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec2d89b361971394191d50209b897518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diamondText: {fileID: 0}
-  diamondTextAtEnd: {fileID: 0}
-  diamondData: {fileID: 0}
 --- !u!1 &6640279958660658810
 GameObject:
   m_ObjectHideFlags: 0

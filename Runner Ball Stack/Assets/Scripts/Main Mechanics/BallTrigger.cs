@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RDG;
 
 public class BallTrigger : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class BallTrigger : MonoBehaviour
     {
         if(other.tag == "ball" && !StackManager.Instance.stackedBalls.Contains(other.gameObject))
         {
-            Handheld.Vibrate();
+            Vibration.Vibrate(15);
 
             GameObject newStackedBall = other.gameObject;
             AddBallIntoStack(newStackedBall);

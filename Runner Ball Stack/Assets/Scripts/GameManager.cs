@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] LevelManager levelManager;
+    [SerializeField] UnlockObstacleManager unlockObstacleManager;
+
     [SerializeField] BallRotation ballRotation;
     [SerializeField] CanvasManager canvasManager;
 
@@ -36,6 +39,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        levelManager.SetLevelInfo();
+        unlockObstacleManager.SetUnlockObstacleInfo();
+
         cameraMovement = Camera.main.GetComponent<CameraMovement>();
         firstBallMoveForward = firstBall.GetComponent<FirstBallMoveForward>();
         rotateInAxisX = firstBall.GetComponent<RotateInAxisX>();
@@ -59,7 +65,7 @@ public class GameManager : MonoBehaviour
     {
         ScoreManager.Instance.FinishLevelSuccessfully();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+        levelManager.PasstoNextLevel();
         //StartCoroutine(NextLevel());
     }
 

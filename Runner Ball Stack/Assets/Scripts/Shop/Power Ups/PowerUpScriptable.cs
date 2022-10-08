@@ -10,6 +10,7 @@ public class PowerUpScriptable : ScriptableObject
     public int level;
     public int[] priceList;
     public int[] incomeList;
+    
 
     public void Upgrade()
     {
@@ -24,7 +25,7 @@ public class PowerUpScriptable : ScriptableObject
     }
     public void SetInfo()
     {
-        level = PlayerPrefs.GetInt(name);
+        level = PlayerPrefs.GetInt(name, 1);
         price = priceList[level];
     }
 

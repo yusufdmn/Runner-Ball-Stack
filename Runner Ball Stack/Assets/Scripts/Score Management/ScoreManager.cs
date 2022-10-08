@@ -20,6 +20,9 @@ public class ScoreManager : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] UnlockObstacleManager unlockObstacleManager;
+    bool shouldUnlockObstacle;
+    
     [SerializeField] DiamondTextUpdater diamondTextUpdater;
     public int ballWorth;
 
@@ -70,7 +73,12 @@ public class ScoreManager : MonoBehaviour
         diamondTextUpdater.diamondTextAtEnd.text = (diamondData.diamond + diamondData.levelScore).ToString();
         //StartCoroutine(AnimateDiamondText());
         yield return new WaitForSeconds(1);
-        GameManager.Instance.CompleteThelevel();
+
+        shouldUnlockObstacle = unlockObstacleManager.shouldUnlockObstacle;
+        if (shouldUnlockObstacle)
+            canvasManager.DisplayUnlockObstaclePanel();
+        else
+            GameManager.Instance.CompleteThelevel();
     }
 
     IEnumerator AnimateDiamondText()

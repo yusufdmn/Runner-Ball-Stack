@@ -10,6 +10,7 @@ public class IncomeUpManager : PowerUpManager
 
     private void Start()
     {
+        base.SetInfo();
         SetExtraIncomeText();
     }
     public int GetExtraIncomeAmount()
