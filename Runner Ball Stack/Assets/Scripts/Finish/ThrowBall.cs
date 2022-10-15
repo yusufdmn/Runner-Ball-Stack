@@ -7,8 +7,6 @@ using RDG;
 
 public class ThrowBall : Finish
 {
-    [SerializeField] ParticleSystem confetti1;
-    [SerializeField] ParticleSystem confetti2;
 
     bool ispressed;
     private bool canThrow;
@@ -73,7 +71,7 @@ public class ThrowBall : Finish
 
     void ThrowNextBall(float throwSpeed)
     {
-        Vibration.Vibrate(10);
+        Vibration.Vibrate(35);
 
         Rigidbody rigidbody = stackedBalls[0].GetComponent<Rigidbody>();
         stackedBalls[0].GetComponent<RotateInAxisX>().enabled = true;
@@ -104,11 +102,4 @@ public class ThrowBall : Finish
         }
     }
 
-    IEnumerator LaunchEndOfTheGame()
-    {
-        confetti1.Play();
-        confetti2.Play();
-        yield return new WaitForSeconds(4f);
-        GameManager.Instance.EndTheGame();
-    }
 }

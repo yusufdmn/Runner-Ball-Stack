@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc698ec51b4d89d4c81bdcb5ef2e6290, type: 3}
   m_Name: ObstacleAchievement
   m_EditorClassIdentifier: 
-  obstacleAchievements: 0001000100000100010000000100000001000100
+  obstacleAchievements: 0101010100000100010000000100000001000100
+  obstacleImages:
+  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
+  - {fileID: 21300000, guid: 4dfd6611e70210247b8a1c148976637b, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}

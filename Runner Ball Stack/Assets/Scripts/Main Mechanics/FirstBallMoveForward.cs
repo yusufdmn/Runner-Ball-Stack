@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FirstBallMoveForward : MonoBehaviour
 {
+    public static GameObject firstBall;
+
     float x;
     float maxPosX = 2.5f;
 
@@ -13,6 +15,11 @@ public class FirstBallMoveForward : MonoBehaviour
 
     Touch touch;
     Vector3 moveVector;
+
+    public void SetSpeed(int speed)
+    {
+        speedForward = speed;
+    }
 
     private void Start()
     {

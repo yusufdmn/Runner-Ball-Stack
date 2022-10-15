@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using RDG;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
@@ -9,7 +8,7 @@ public class Obstacle : MonoBehaviour
         if (other.tag == "FirstBall")
         {
             DestroyBall(other.gameObject);
-
+            Vibration.Vibrate(45);
             GameObject newFirstBall = StackManager.Instance.stackedBalls[0];
             AssignNewFirstBall(newFirstBall);
             AssignFirstBallForCameraFollow(newFirstBall);

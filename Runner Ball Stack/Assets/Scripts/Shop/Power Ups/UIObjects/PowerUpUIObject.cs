@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using RDG;
 
 public class PowerUpUIObject : MonoBehaviour
 {
@@ -35,14 +36,14 @@ public class PowerUpUIObject : MonoBehaviour
         {
             upgradeButton.interactable = false;
             animator.enabled = false;
-        //    Vibration.Vibrate(100, 50)
         }
     }
 
     public virtual void Upgrade()
     {
+        Vibration.Vibrate(35);
         int price = powerUp.price;
-            shopManager.UpgradePowerUp(powerUp, price);
+        shopManager.UpgradePowerUp(powerUp, price);
         UpdateTexts();
     }
 

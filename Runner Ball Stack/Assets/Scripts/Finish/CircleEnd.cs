@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using RDG;
 
 public class CircleEnd : Finish
 {
-    [SerializeField] ParticleSystem confetti1;
-    [SerializeField] ParticleSystem confetti2;
 
     public bool areCirclesFull = false;
     bool areBallsFinished = false;
@@ -58,6 +57,7 @@ public class CircleEnd : Finish
 
         if (stackedBalls.Count > 0)
         {
+            Vibration.Vibrate(35);
             Vector3 circlePos = circlePositions[indexOfNextCircle];
             circlePos.y += 0.7f;
             stackedBalls[0].transform.DOMove(circlePos, flyDuration);
@@ -72,6 +72,7 @@ public class CircleEnd : Finish
 
     public IEnumerator FlyNextBallToLastSpot()
     {
+        Vibration.Vibrate(35);
         yield return new WaitForEndOfFrame();
         Vector3 targetPos = lastSpot.position;
         targetPos.y += 0.5f;
@@ -94,12 +95,4 @@ public class CircleEnd : Finish
         Camera.main.GetComponent<CameraMovement>().MoveAndSetAngle(cameraPos, cameraAngle);
     }
 
-
-    IEnumerator LaunchEndOfTheGame()
-    {
-        confetti1.Play();
-        confetti2.Play();
-        yield return new WaitForSeconds(3f);
-        GameManager.Instance.EndTheGame();
-    }
 }
