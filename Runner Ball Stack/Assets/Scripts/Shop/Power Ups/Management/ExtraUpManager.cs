@@ -11,7 +11,6 @@ public class ExtraUpManager : PowerUpManager
 
     private void Start()
     {
-        base.SetInfo();
         SetPosition();
         AddExtraBalls();
     }

@@ -11,8 +11,8 @@ public class UnlockObstacleManager : MonoBehaviour
     [SerializeField] Image obstacleImage;
     public void SetUnlockObstacleInfo()
     {
-        shouldUnlockObstacle = obstacleDataScriptable.GetIfUnlcokObstacle(levelManager.level - 1);
-        obstacleImage.sprite = obstacleDataScriptable.GetObstacleImage(levelManager.level-1);
+        shouldUnlockObstacle = obstacleDataScriptable.GetIfUnlcokObstacle(levelManager.level);
+        obstacleImage.sprite = obstacleDataScriptable.GetObstacleImage(levelManager.level);
     }
 
 }

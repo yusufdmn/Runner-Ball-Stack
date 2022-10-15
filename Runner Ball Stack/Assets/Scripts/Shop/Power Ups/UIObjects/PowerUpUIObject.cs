@@ -18,10 +18,14 @@ public class PowerUpUIObject : MonoBehaviour
 
     private void Start()
     {
+        SetInfo();
         UpdateTexts();
         animator = gameObject.GetComponent<Animator>();
     }
-
+    public void SetInfo()
+    {
+        powerUp.SetInfo();
+    }
     void UpdateTexts()
     {
         nameText.text = powerUp.name;

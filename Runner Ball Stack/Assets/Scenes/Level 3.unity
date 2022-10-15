@@ -5466,7 +5466,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -5522,7 +5522,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!198 &721835246 stripped
 ParticleSystem:
@@ -8527,7 +8527,7 @@ PrefabInstance:
     - target: {fileID: 6640279958443098076, guid: f3a1ed5c677c9494fbbef170474df56c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6640279958443098076, guid: f3a1ed5c677c9494fbbef170474df56c,
         type: 3}
@@ -11919,7 +11919,7 @@ PrefabInstance:
     - target: {fileID: 2208308194870398477, guid: cd28074f0a7651e46bfd146a8bb37e66,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2208308194870398477, guid: cd28074f0a7651e46bfd146a8bb37e66,
         type: 3}
@@ -12457,7 +12457,7 @@ PrefabInstance:
     - target: {fileID: 2516218587349785415, guid: a1685082a4cd2c844bac0a882874749a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2516218587349785415, guid: a1685082a4cd2c844bac0a882874749a,
         type: 3}
@@ -15676,7 +15676,7 @@ PrefabInstance:
     - target: {fileID: 2356690755969973625, guid: 31ddfbbda6c522d4bbbf03df6a71e61e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2356690755969973625, guid: 31ddfbbda6c522d4bbbf03df6a71e61e,
         type: 3}
@@ -16718,7 +16718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a90005eb2d6d044be24d8c583d2ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
   confetti1: {fileID: 1395407789}
   confetti2: {fileID: 721835246}
   areCirclesFull: 0
@@ -18618,7 +18617,7 @@ PrefabInstance:
     - target: {fileID: 1783276646780061700, guid: 1c0520325bd5b534188c40bef406dc5c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1783276646780061700, guid: 1c0520325bd5b534188c40bef406dc5c,
         type: 3}
@@ -20252,7 +20251,7 @@ PrefabInstance:
     - target: {fileID: 2946223095280312032, guid: 16966713336d54d4a96c67725c97301c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2946223095280312032, guid: 16966713336d54d4a96c67725c97301c,
         type: 3}
@@ -23340,7 +23339,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2027909983
 GameObject:

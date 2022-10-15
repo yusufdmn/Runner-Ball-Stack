@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Power Up Extra
   m_EditorClassIdentifier: 
   name: EXTRA
-  price: 250
-  level: 2
+  price: 450
+  level: 3
   priceList: 0000000064000000fa000000c2010000bc020000b0040000d00700001c0c000094110000a8160000bc1b0000c42200003c280000
   incomeList: 
