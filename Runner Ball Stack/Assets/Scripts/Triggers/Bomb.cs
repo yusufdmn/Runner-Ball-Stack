@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-   // ParticleSystem explodeEffect;
+    [SerializeField] ParticleSystem explodeEffect;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("FirstBall"))
         {
-       // explodeEffect.Play();
+        transform.GetChild(0).parent = null;
+        explodeEffect.Play();
         StartCoroutine(DisableYourself());
-        StackManager.Instance.stackedBalls[0].GetComponent<FirstBallMoveForward>().SetSpeed(7);
+        if(StackManager.Instance.stackedBalls.Count > 0)
+            StackManager.Instance.stackedBalls[0].GetComponent<FirstBallMoveForward>().SetSpeed(7);
         }
-
     }
 
     IEnumerator DisableYourself()
