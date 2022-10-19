@@ -21,6 +21,7 @@ public class PowerUpUIObject : MonoBehaviour
         SetInfo();
         UpdateTexts();
         animator = gameObject.GetComponent<Animator>();
+        SetButtonInteractivity();
     }
     public void SetInfo()
     {
@@ -33,8 +34,9 @@ public class PowerUpUIObject : MonoBehaviour
         priceText.text = powerUp.price.ToString();
     }
 
-    public void SetButtonInteractivity(int diamond)
+    public void SetButtonInteractivity()
     {
+        int diamond = shopManager.GetDiamond();
         int price = powerUp.price;
         if (diamond < price)
         {
@@ -47,6 +49,7 @@ public class PowerUpUIObject : MonoBehaviour
     {
         Vibration.Vibrate(35);
         int price = powerUp.price;
+        
         shopManager.UpgradePowerUp(powerUp, price);
         UpdateTexts();
     }

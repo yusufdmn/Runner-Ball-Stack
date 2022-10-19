@@ -8,17 +8,17 @@ public class ShopManager : MonoBehaviour
     [SerializeField] List<PowerUpUIObject> powerUpUIObjects;
     [SerializeField] DiamondTextUpdater diamondTextUpdater;
 
-    private void Start()
+    public int GetDiamond()
     {
-        SetUpgradeBtnInteractivity();
+        return diamondData.diamond;
     }
 
     public void SetUpgradeBtnInteractivity()
     {
         int diamond = diamondData.diamond;
-        foreach (PowerUpUIObject powerUp in powerUpUIObjects)
+        foreach (PowerUpUIObject powerUpUI in powerUpUIObjects)
         {
-            powerUp.SetButtonInteractivity(diamond);
+            powerUpUI.SetButtonInteractivity();
         }
     }
 
@@ -28,6 +28,7 @@ public class ShopManager : MonoBehaviour
         powerUpScriptable.Upgrade();
         StartCoroutine(diamondTextUpdater.UpdateDiamondTexts());
         SetUpgradeBtnInteractivity();
+        diamondData.SaveScore();
     }
 
 }

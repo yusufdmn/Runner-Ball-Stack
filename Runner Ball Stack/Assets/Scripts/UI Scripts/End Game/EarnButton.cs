@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class EarnButton : MonoBehaviour
 {
+    [SerializeField]  GameObject earnButtonObj;
+    [SerializeField] GameObject noThanksButtonObj;
+
     [SerializeField] UITweenAnimation uITweenAnimation;
 
     [SerializeField] AdWheelArrow adWheelArrow;
@@ -54,6 +57,8 @@ public class EarnButton : MonoBehaviour
         ScoreManager.Instance.MultiplyTheScore(earnedWheelScore);
         
         StartCoroutine(uITweenAnimation.Animate());
+        noThanksButtonObj.SetActive(false);
+        earnButtonObj.SetActive(false);
     }
 
 }
