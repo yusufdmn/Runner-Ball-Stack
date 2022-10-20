@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class StartGame : MonoBehaviour
 {
@@ -8,4 +9,5 @@ public class StartGame : MonoBehaviour
     {
         GameManager.Instance.StartTheGame();
     }
+
 }
