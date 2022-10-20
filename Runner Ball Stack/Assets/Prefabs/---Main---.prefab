@@ -857,6 +857,12 @@ PrefabInstance:
       propertyPath: extraUpManager
       value: 
       objectReference: {fileID: 3759864087466171211}
+    - target: {fileID: 6568521645869664595, guid: 31ddfbbda6c522d4bbbf03df6a71e61e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c076df2e00106f34a8c618d1650ebffd,
+        type: 3}
     - target: {fileID: 8199019936025683880, guid: 31ddfbbda6c522d4bbbf03df6a71e61e,
         type: 3}
       propertyPath: m_IsActive
