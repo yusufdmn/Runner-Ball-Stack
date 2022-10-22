@@ -275,18 +275,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2310397277853109177, guid: e14cdc94e2e615348b4a87bbe2143ee5,
         type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310397277853109177, guid: e14cdc94e2e615348b4a87bbe2143ee5,
+        type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.86274517
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2310397277853109177, guid: e14cdc94e2e615348b4a87bbe2143ee5,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.61960787
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2310397277853109177, guid: e14cdc94e2e615348b4a87bbe2143ee5,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.65882355
+      value: 0.9614376
       objectReference: {fileID: 0}
     - target: {fileID: 2310397277853109179, guid: e14cdc94e2e615348b4a87bbe2143ee5,
         type: 3}

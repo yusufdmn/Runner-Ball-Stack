@@ -12,24 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc698ec51b4d89d4c81bdcb5ef2e6290, type: 3}
   m_Name: ObstacleAchievement
   m_EditorClassIdentifier: 
-  obstacleAchievements: 0001010000010001000000010001000001000100
+  obstacleAchievements: 000101010000010001000001000100000100010000000000000000000000
   obstacleImages:
   - {fileID: 0}
   - {fileID: 21300000, guid: 344eeff099ad3f04d90047637243275d, type: 3}
-  - {fileID: 21300000, guid: 4dfd6611e70210247b8a1c148976637b, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
+  - {fileID: 21300000, guid: ee6e8fd685274004f85719b0ecb1db54, type: 3}
   - {fileID: 21300000, guid: b6db755228470d648bca2771bcd0c9c5, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 21300000, guid: 38264afe6c57cdf488381941a9daeb50, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
+  - {fileID: 0}
   - {fileID: 21300000, guid: dce99ae54a14224438c41199c6d56570, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
-  - {fileID: 21300000, guid: ec5b7f4b81cef454bafbbda0ef41a3b7, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
-  - {fileID: 21300000, guid: 25908d7a69f33ee48a4abc4e71e06fe3, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 21300000, guid: 2acd75a9da6610a44b215aad777e7ff5, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: ec5b7f4b81cef454bafbbda0ef41a3b7, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 25908d7a69f33ee48a4abc4e71e06fe3, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 4dfd6611e70210247b8a1c148976637b, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

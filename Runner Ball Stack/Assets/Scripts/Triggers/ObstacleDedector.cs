@@ -8,7 +8,10 @@ public class ObstacleDedector : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("obstacle"))
+        {
+            explosion.transform.parent = null;
             explosion.Play();
+        }
 
     }
 }
