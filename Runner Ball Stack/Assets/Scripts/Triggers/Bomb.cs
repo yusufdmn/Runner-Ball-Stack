@@ -14,7 +14,7 @@ public class Bomb : MonoBehaviour
         explodeEffect.Play();
         StartCoroutine(DisableYourself());
         if(StackManager.Instance.stackedBalls.Count > 0)
-            StackManager.Instance.stackedBalls[0].GetComponent<FirstBallMoveForward>().SetSpeed(7);
+            StackManager.Instance.stackedBalls[0].GetComponent<FirstBallMoveForward>().SetSpeed(8);
         }
     }
 

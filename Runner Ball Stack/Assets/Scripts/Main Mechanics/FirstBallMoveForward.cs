@@ -9,9 +9,9 @@ public class FirstBallMoveForward : MonoBehaviour
     float x;
     float maxPosX = 2.5f;
 
-    [SerializeField] float speedForward = 1f;
-    [SerializeField] float speedSide = 7;
-    [SerializeField] float speedSideMobil = 0.4f;
+    float speedForward = 1f;
+    [SerializeField] float speedSide = 8;
+    [SerializeField] float speedSideMobil = 0.3f;
 
     Touch touch;
     Vector3 moveVector;
@@ -73,7 +73,7 @@ public class FirstBallMoveForward : MonoBehaviour
 
     IEnumerator SpeedUp()
     {
-        while(speedForward < 7)
+        while(speedForward < 8)
         {
             speedForward += 0.07f;
             yield return new WaitForEndOfFrame();

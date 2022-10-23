@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public int level;
-
-
+    [SerializeField] LevelTextManager levelTextManager;
 
     public void SetLevelInfo()
     {
@@ -15,8 +14,9 @@ public class LevelManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex + 1 != level)
         {
-            SceneManager.LoadScene(level - 1);
+       //     SceneManager.LoadScene(level - 1);
         }
+        levelTextManager.SetLevelText(level);
     }
     public void PasstoNextLevel()
     {

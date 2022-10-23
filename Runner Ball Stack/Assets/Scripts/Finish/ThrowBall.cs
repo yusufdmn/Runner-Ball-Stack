@@ -77,7 +77,7 @@ public class ThrowBall : Finish
         stackedBalls[0].GetComponent<RotateInAxisX>().enabled = true;
         rigidbody.isKinematic = false;
         rigidbody.velocity = Vector3.forward * throwSpeed * Time.deltaTime;
-
+        time = 0;
         canThrow = false;
         stackedBalls.RemoveAt(0);
     }
