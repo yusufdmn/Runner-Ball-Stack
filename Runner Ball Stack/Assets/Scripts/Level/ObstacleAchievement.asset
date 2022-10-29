@@ -15,24 +15,24 @@ MonoBehaviour:
   obstacleAchievements: 000101010000010001000001000100000100010000000000000000000000
   obstacleImages:
   - {fileID: 0}
-  - {fileID: 21300000, guid: 344eeff099ad3f04d90047637243275d, type: 3}
-  - {fileID: 21300000, guid: ee6e8fd685274004f85719b0ecb1db54, type: 3}
-  - {fileID: 21300000, guid: b6db755228470d648bca2771bcd0c9c5, type: 3}
+  - {fileID: 21300000, guid: 603f758ca965bd6458dc2d4342c94357, type: 3}
+  - {fileID: 21300000, guid: e55f11409d199924ea39a7c40c0208a6, type: 3}
+  - {fileID: 21300000, guid: fec6a0250932c054791d12245fc0a0ef, type: 3}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 21300000, guid: 38264afe6c57cdf488381941a9daeb50, type: 3}
+  - {fileID: 21300000, guid: 5e0c695183c67fc478b66ead71b49376, type: 3}
   - {fileID: 0}
-  - {fileID: 21300000, guid: dce99ae54a14224438c41199c6d56570, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 21300000, guid: 2acd75a9da6610a44b215aad777e7ff5, type: 3}
-  - {fileID: 0}
-  - {fileID: 21300000, guid: ec5b7f4b81cef454bafbbda0ef41a3b7, type: 3}
+  - {fileID: 21300000, guid: afa98db96812a024eae84874b3eb33ac, type: 3}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 21300000, guid: 25908d7a69f33ee48a4abc4e71e06fe3, type: 3}
+  - {fileID: 21300000, guid: 5d7dfdee5b3a3b849a6afaaf7c9382c4, type: 3}
   - {fileID: 0}
-  - {fileID: 21300000, guid: 4dfd6611e70210247b8a1c148976637b, type: 3}
+  - {fileID: 21300000, guid: 05232cee8264b1449a53e0e736eeb050, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 600c49b526b44b446b0b29362e23dcd6, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 8b4a90c1d5a151244857c0d4f90a0192, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

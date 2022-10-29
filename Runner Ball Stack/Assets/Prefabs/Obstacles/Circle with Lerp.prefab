@@ -351,8 +351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstTarget: {fileID: 9015656290154783440}
   secondTarget: {fileID: 165998280333638581}
-  minRandomSpeed: 0.1
-  maxRandomSpeed: 0.4
+  minRandomSpeed: 0.2
+  maxRandomSpeed: 0.5
   offset: {x: 0, y: 0.1, z: 0}
 --- !u!1 &8387298670881798085
 GameObject:

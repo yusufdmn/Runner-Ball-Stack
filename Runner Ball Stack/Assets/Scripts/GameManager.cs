@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         canvasManager.DisplayFailPanel();
     }
 
-    public void RetryLevel()
+    public void ResetLevelData()
     {
         ScoreManager.Instance.SkipLevel();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

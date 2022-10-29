@@ -79,7 +79,7 @@ public class StackManager : MonoBehaviour
             stackedBalls[index].transform.DOScale(bigScale, scaleDuration).OnComplete(() =>
                 stackedBalls[index].transform.DOScale(scale, scaleDuration)
             );
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.04f);
         }
     }
 

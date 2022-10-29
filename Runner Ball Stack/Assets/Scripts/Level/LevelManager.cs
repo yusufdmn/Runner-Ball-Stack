@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex + 1 != level)
         {
-       //     SceneManager.LoadScene(level - 1);
+          SceneManager.LoadScene(level - 1);
         }
         levelTextManager.SetLevelText(level);
     }
