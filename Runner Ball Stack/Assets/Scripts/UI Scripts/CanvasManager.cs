@@ -10,6 +10,8 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject failPanel;
     [SerializeField] GameObject extraIncomePanel;
     [SerializeField] GameObject unlockObstaclePanel;
+    [SerializeField] GameObject settingsPopUp;
+
     public void HideMainMenu()
     {
         hidedMenu.SetActive(false);
@@ -35,5 +37,10 @@ public class CanvasManager : MonoBehaviour
     public void DisplayUnlockObstaclePanel()
     {
         unlockObstaclePanel.SetActive(true);
+    }
+
+    public void DisplaySettingsPopUp()
+    {
+        settingsPopUp.SetActive(!settingsPopUp.activeSelf);
     }
 }
