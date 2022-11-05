@@ -7,10 +7,13 @@ public class LevelManager : MonoBehaviour
 {
     public int level;
     [SerializeField] LevelTextManager levelTextManager;
-
+    [SerializeField] bool isTestActive;
     public void SetLevelInfo()
     {
-        level = PlayerPrefs.GetInt("level", 1);
+        if (isTestActive)
+            level = SceneManager.GetActiveScene().buildIndex + 1;
+        else
+            level = PlayerPrefs.GetInt("level", 1);
 
         if (SceneManager.GetActiveScene().buildIndex + 1 != level)
         {
