@@ -75,9 +75,15 @@ public class FirstBallMoveForward : MonoBehaviour
     {
         while(speedForward < 8)
         {
-            speedForward += 0.08f;
+            float incrementSpeed;
+            if (speedForward < 3)
+                incrementSpeed = 0.08f;
+            else
+                incrementSpeed = 1;
+            speedForward += incrementSpeed;
             yield return new WaitForEndOfFrame();
         }
+        
     }
 
     void KeepBallOnWay()
