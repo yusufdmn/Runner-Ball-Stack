@@ -7,9 +7,18 @@ public class ConstantRotate : MonoBehaviour
     [Range(-250, 250)]
     public float rotateSpeed;
     public bool isLocal;
+    public bool isRandomized;
+    public float minSpeed;
+    public float maxSpeed;
+
+    private void Start()
+    {
+        if (isRandomized)
+            rotateSpeed = Random.Range(minSpeed, maxSpeed);
+    }
 
     public void RotateX()
-    {
+    { 
         if(isLocal)
             transform.Rotate(Vector3.right * rotateSpeed * Time.deltaTime, Space.Self);
         else
