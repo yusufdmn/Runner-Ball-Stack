@@ -60,6 +60,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: -90
+  isLocal: 0
+  isRandomized: 1
+  minSpeed: 60
+  maxSpeed: 90
 --- !u!136 &6544657271727805464
 CapsuleCollider:
   m_ObjectHideFlags: 0
