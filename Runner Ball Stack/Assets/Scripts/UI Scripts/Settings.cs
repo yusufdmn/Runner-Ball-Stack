@@ -21,8 +21,8 @@ public class Settings : MonoBehaviour
 
     [SerializeField] CanvasManager canvasManager;
 
-    public bool isVibrationOn;
-    public bool isMusicOn;
+    public static bool isVibrationOn;
+    public static bool isMusicOn;
 
     private void Start()
     {
