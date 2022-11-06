@@ -28,7 +28,8 @@ public class Obstacle : MonoBehaviour
 
     private void DestroyBall(GameObject ball)
     {
-        Vibration.Vibrate(50);
+        if(Settings.isVibrationOn)
+            Vibration.Vibrate(55);
         StackManager.Instance.stackedBalls.Remove(ball);
         ball.SetActive(false);
     }

@@ -11,8 +11,9 @@ public class DiamondTrigger : MonoBehaviour
         if(other.tag == "FirstBall" || other.tag == "ball")
         {
 
-            Vibration.Vibrate(35);
-            
+            if (Settings.isVibrationOn)
+                Vibration.Vibrate(35);
+
             ScoreManager.Instance.CollectDiamond(diamondWorth);
             Destroy(gameObject);
         }
