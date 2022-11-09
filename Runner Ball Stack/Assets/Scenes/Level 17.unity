@@ -43757,14 +43757,14 @@ Transform:
   - {fileID: 1215818706}
   - {fileID: 855603852}
   - {fileID: 1804380039}
-  - {fileID: 727462165}
+  - {fileID: 918233949}
   - {fileID: 712701190}
-  - {fileID: 740769959}
   - {fileID: 328071674}
   - {fileID: 662640751}
-  - {fileID: 1918970028}
-  - {fileID: 918233949}
   - {fileID: 1092356727}
+  - {fileID: 1918970028}
+  - {fileID: 727462165}
+  - {fileID: 740769959}
   - {fileID: 849367319}
   - {fileID: 1987833806}
   - {fileID: 679869281}
@@ -70648,7 +70648,7 @@ PrefabInstance:
     - target: {fileID: 8022021836551089740, guid: a1685082a4cd2c844bac0a882874749a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9146690180115154312, guid: a1685082a4cd2c844bac0a882874749a,
         type: 3}
