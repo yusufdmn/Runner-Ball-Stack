@@ -71,7 +71,8 @@ public class ThrowBall : Finish
 
     void ThrowNextBall(float throwSpeed)
     {
-        Vibration.Vibrate(35);
+        if(Settings.isVibrationOn)
+            Vibration.Vibrate(35);
 
         Rigidbody rigidbody = stackedBalls[0].GetComponent<Rigidbody>();
         stackedBalls[0].GetComponent<RotateInAxisX>().enabled = true;

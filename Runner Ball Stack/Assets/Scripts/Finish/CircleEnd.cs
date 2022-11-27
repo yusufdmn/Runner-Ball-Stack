@@ -57,7 +57,9 @@ public class CircleEnd : Finish
 
         if (stackedBalls.Count > 0)
         {
-            Vibration.Vibrate(35);
+            if (Settings.isVibrationOn)
+                Vibration.Vibrate(35);
+
             Vector3 circlePos = circlePositions[indexOfNextCircle];
             circlePos.y += 0.7f;
             stackedBalls[0].transform.DOMove(circlePos, flyDuration);
