@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   levelTextManager: {fileID: 5026277448176335199}
-  isTestActive: 1
+  isTestActive: 0
 --- !u!114 &5026277448176335199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,9 +501,19 @@ PrefabInstance:
       objectReference: {fileID: 8022021836304343756}
     - target: {fileID: 6640279958002928905, guid: f3a1ed5c677c9494fbbef170474df56c,
         type: 3}
+      propertyPath: earnButtonObj
+      value: 
+      objectReference: {fileID: 8022021836304343746}
+    - target: {fileID: 6640279958002928905, guid: f3a1ed5c677c9494fbbef170474df56c,
+        type: 3}
       propertyPath: uITweenAnimation
       value: 
       objectReference: {fileID: 7753922930111951377}
+    - target: {fileID: 6640279958002928905, guid: f3a1ed5c677c9494fbbef170474df56c,
+        type: 3}
+      propertyPath: noThanksButtonObj
+      value: 
+      objectReference: {fileID: 8022021837313869524}
     - target: {fileID: 6640279958443098075, guid: f3a1ed5c677c9494fbbef170474df56c,
         type: 3}
       propertyPath: m_Name

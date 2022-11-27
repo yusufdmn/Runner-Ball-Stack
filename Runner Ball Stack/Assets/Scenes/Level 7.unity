@@ -44117,6 +44117,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7149430658798162942, guid: a1685082a4cd2c844bac0a882874749a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8022021836551089740, guid: a1685082a4cd2c844bac0a882874749a,
         type: 3}
       propertyPath: m_IsActive

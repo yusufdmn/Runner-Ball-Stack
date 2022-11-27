@@ -77,6 +77,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 140
   isLocal: 0
+  isRandomized: 1
+  minSpeed: 120
+  maxSpeed: 180
 --- !u!1 &1487225893375134214
 GameObject:
   m_ObjectHideFlags: 0
@@ -8782,6 +8785,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 50
   isLocal: 0
+  isRandomized: 0
+  minSpeed: 0
+  maxSpeed: 0
 --- !u!1 &7372150017182539615
 GameObject:
   m_ObjectHideFlags: 0
@@ -26806,6 +26812,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 140
   isLocal: 0
+  isRandomized: 1
+  minSpeed: 120
+  maxSpeed: 180
 --- !u!1 &7372150018448396925
 GameObject:
   m_ObjectHideFlags: 0
@@ -45335,6 +45344,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 50
   isLocal: 0
+  isRandomized: 0
+  minSpeed: 0
+  maxSpeed: 0
 --- !u!1 &7978869313111593160
 GameObject:
   m_ObjectHideFlags: 0
