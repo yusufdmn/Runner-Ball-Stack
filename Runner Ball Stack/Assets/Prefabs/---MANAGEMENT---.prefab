@@ -155,7 +155,6 @@ GameObject:
   - component: {fileID: 6640279958002928902}
   - component: {fileID: 6640279958002928905}
   - component: {fileID: 6640279958002928904}
-  - component: {fileID: 4961471568308666847}
   - component: {fileID: 6640279958002928906}
   - component: {fileID: 8861625440354943779}
   m_Layer: 0
@@ -197,6 +196,7 @@ MonoBehaviour:
   failPanel: {fileID: 0}
   extraIncomePanel: {fileID: 0}
   unlockObstaclePanel: {fileID: 0}
+  settingsPopUp: {fileID: 0}
 --- !u!114 &6640279958002928902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dcac2edbf43574180a86b4fb1a8616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  earnButtonObj: {fileID: 0}
+  noThanksButtonObj: {fileID: 0}
   uITweenAnimation: {fileID: 0}
   adWheelArrow: {fileID: 0}
   wheelArrowTransform: {fileID: 0}
@@ -246,21 +248,6 @@ MonoBehaviour:
   earnButton: {fileID: 0}
   noButton: {fileID: 0}
   diamondData: {fileID: 0}
---- !u!114 &4961471568308666847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6640279958002928900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69d5b645daf8e04da20726c675bcedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstacleImages:
-  - {fileID: 21300000, guid: 4dfd6611e70210247b8a1c148976637b, type: 3}
-  - {fileID: 21300000, guid: 5cf50d86826f34c47a0a49010103b300, type: 3}
 --- !u!114 &6640279958002928906
 MonoBehaviour:
   m_ObjectHideFlags: 0
