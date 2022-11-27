@@ -64,8 +64,9 @@ public class GameManager : MonoBehaviour
     public void CompleteThelevel()
     {
         ScoreManager.Instance.FinishLevelSuccessfully();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         levelManager.PasstoNextLevel();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
         //StartCoroutine(NextLevel());
     }
 
@@ -77,18 +78,17 @@ public class GameManager : MonoBehaviour
         canvasManager.DisplayFailPanel();
     }
 
-    public void ResetLevelData()
+    public void RetryLevel()
     {
-        ScoreManager.Instance.SkipLevel();
+        ScoreManager.Instance.ResetLevelScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-
-    IEnumerator NextLevel()
+    public void SkipLevel()
     {
-        yield return new WaitForSeconds(3f);
+        ScoreManager.Instance.ResetLevelScore();
+        levelManager.PasstoNextLevel();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
 
 }

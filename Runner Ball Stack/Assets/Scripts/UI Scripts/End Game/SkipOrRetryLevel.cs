@@ -9,11 +9,12 @@ public class SkipOrRetryLevel : MonoBehaviour
     public void SkipLevel()
     {
         // Show Ad
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameManager.Instance.SkipLevel();
     }
     public void RetryLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Instance.RetryLevel();
+
     }
 
 }
