@@ -10,16 +10,20 @@ public class Bomb : MonoBehaviour
     {
         if (other.CompareTag("FirstBall"))
         {
-        transform.GetChild(0).parent = null;
-        explodeEffect.Play();
         StartCoroutine(DisableYourself());
         if(StackManager.Instance.stackedBalls.Count > 0)
             StackManager.Instance.stackedBalls[0].GetComponent<FirstBallMoveForward>().SetSpeed(8);
+        }
+        else if (other.CompareTag("ball"))
+        {
+            StartCoroutine(DisableYourself());
         }
     }
 
     IEnumerator DisableYourself()
     {
+        transform.GetChild(0).parent = null;
+        explodeEffect.Play();
         yield return new WaitForEndOfFrame();
         gameObject.SetActive(false);
     }
