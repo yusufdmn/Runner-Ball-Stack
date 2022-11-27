@@ -13,6 +13,11 @@ public class CameraMovement : MonoBehaviour
     public bool isFinished;
     [SerializeField] float moveDuration;
 
+    private void Start()
+    {
+        offset = new Vector3(0, 7.25f, -10);
+    }
+
     void LateUpdate()
     {
         if(!isFinished)
