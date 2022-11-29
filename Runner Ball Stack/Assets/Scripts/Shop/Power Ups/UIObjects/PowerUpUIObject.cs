@@ -27,6 +27,7 @@ public class PowerUpUIObject : MonoBehaviour
     {
         powerUp.SetInfo();
     }
+
     void UpdateTexts()
     {
         nameText.text = powerUp.name;
@@ -36,34 +37,50 @@ public class PowerUpUIObject : MonoBehaviour
 
     public void SetButtonInteractivity()
     {
+        if (IsLevelMax())
+        {
+            FreezeUpdate();
+            DeActivateButton();
+            return;
+        }
+
         int diamond = shopManager.GetDiamond();
         int price = powerUp.price;
         if (diamond < price)
-        {
-            upgradeButton.interactable = false;
-            animator.enabled = false;
-        }
+            DeActivateButton();
+    }
+
+    private void DeActivateButton()
+    {
+        upgradeButton.interactable = false;
+        animator.enabled = false;
     }
 
     public virtual void Upgrade()
     {
-        Vibration.Vibrate(35);
+        if(Settings.isVibrationOn)
+            Vibration.Vibrate(35);
+
         int price = powerUp.price;
         
         shopManager.UpgradePowerUp(powerUp, price);
         UpdateTexts();
+
+        if (IsLevelMax())
+            FreezeUpdate();
     }
 
     public bool IsLevelMax()
     {
-        if (powerUp.level >= powerUp.maxLevel)
+        if (powerUp.level >= powerUp.maxLevel)  
             return true;
-        else
+        else 
             return false;
     }
 
     public void FreezeUpdate()
     {
-        
+        levelText.text = "MAX";
+        priceText.text = "FULL";
     }
 }
