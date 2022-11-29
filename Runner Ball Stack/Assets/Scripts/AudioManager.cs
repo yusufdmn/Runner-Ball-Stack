@@ -11,15 +11,18 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySettingSound()
     {
-        settingsSound.Play();
+        if (Settings.isMusicOn)
+            settingsSound.Play();
     }
 
     public void PlayWinSound()
     {
-        winSound.Play();
+        if (Settings.isMusicOn)
+            winSound.Play();
     }
     public void PlayFailSound()
     {
-        failSound.Play();
+        if(Settings.isMusicOn)
+            failSound.Play();
     }
 }
