@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] UnlockObstacleManager unlockObstacleManager;
 
     [SerializeField] BallRotation ballRotation;
+
+    public AudioManager audioManager;
     [SerializeField] CanvasManager canvasManager;
 
     [SerializeField] GameObject firstBall;
@@ -72,6 +74,7 @@ public class GameManager : MonoBehaviour
 
     public void Failed()
     {
+        audioManager.PlayFailSound();
         StackManager.Instance.gameObject.SetActive(false);
         cameraMovement.enabled = false;
         isGameFinished = true;

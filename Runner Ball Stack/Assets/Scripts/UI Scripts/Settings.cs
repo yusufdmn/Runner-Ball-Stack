@@ -20,12 +20,14 @@ public class Settings : MonoBehaviour
     [Space(5)]
 
     [SerializeField] CanvasManager canvasManager;
+    AudioManager audioManager;
 
     public static bool isVibrationOn;
     public static bool isMusicOn;
 
     private void Start()
     {
+        audioManager = GameManager.Instance.audioManager;
         GetSavedSettings();
         SetSettingsSprites();
     }
@@ -87,9 +89,9 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt(key, settingValue);
     }
 
-
     public void SettingsButton()
     {
+        audioManager.PlaySettingSound();
         canvasManager.DisplaySettingsPopUp();
     }
 }
