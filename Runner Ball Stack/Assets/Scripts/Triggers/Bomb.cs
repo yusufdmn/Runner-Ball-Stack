@@ -5,6 +5,12 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     [SerializeField] ParticleSystem explodeEffect;
+    GameObject explosionObj;
+
+    private void Start()
+    {
+        explosionObj = transform.GetChild(0).gameObject;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,7 +28,9 @@ public class Bomb : MonoBehaviour
 
     IEnumerator DisableYourself()
     {
-        transform.GetChild(0).parent = null;
+        explosionObj.transform.parent = null;
+        Destroy(explosionObj, 4);
+//        transform.GetChild(0).parent = null;
         explodeEffect.Play();
         yield return new WaitForEndOfFrame();
         gameObject.SetActive(false);

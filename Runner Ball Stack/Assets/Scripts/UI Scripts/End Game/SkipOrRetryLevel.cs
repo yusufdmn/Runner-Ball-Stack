@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SkipOrRetryLevel : MonoBehaviour
 {
-
     public void SkipLevel()
     {
         // Show Ad
@@ -14,7 +13,5 @@ public class SkipOrRetryLevel : MonoBehaviour
     public void RetryLevel()
     {
         GameManager.Instance.RetryLevel();
-
     }
-
 }

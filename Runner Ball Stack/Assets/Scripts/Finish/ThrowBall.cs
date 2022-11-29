@@ -23,6 +23,7 @@ public class ThrowBall : Finish
     
     private void Start()
     {
+        DefineAudioManager();
         SetStackedBallsToThrow();
         SetCamera();
         Destroy(StackManager.Instance.gameObject, 1.2f);

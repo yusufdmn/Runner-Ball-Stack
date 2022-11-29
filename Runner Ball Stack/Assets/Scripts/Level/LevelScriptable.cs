@@ -7,15 +7,18 @@ public class LevelScriptable : ScriptableObject
 {
     public bool[] obstacleAchievements;
     public Sprite[] obstacleImages;
-  //  public Dictionary<int, Sprite> obstacleDictionary;
 
     public bool GetIfUnlcokObstacle(int level)
     {
-        return obstacleAchievements[level];
+        if(level < 25)
+            return obstacleAchievements[level];
+        return false;
     }
     public Sprite GetObstacleImage(int level)
     {
-        return obstacleImages[level];
+        if(level < 25)
+            return obstacleImages[level];
+        return null;
     }
     
 }

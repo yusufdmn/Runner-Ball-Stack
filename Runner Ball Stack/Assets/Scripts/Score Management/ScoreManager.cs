@@ -46,7 +46,7 @@ public class ScoreManager : MonoBehaviour
         diamondTextUpdater.UpdateTextWithCurrentScore();
     }
 
-    public void SkipLevel()
+    public void ResetLevelScore()
     {
         diamondData.ResetLevelScore();
     }

@@ -23,6 +23,7 @@ public class CircleEnd : Finish
     [SerializeField] Transform lastSpot;
     private void Start()
     {
+        DefineAudioManager();
         SetCamera();
 
         StackManager.Instance.MoveBallsToOrigin();

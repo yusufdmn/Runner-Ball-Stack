@@ -15,7 +15,7 @@ public class PowerUpUIObject : MonoBehaviour
     [SerializeField] Button upgradeButton;
 
     Animator animator;
-
+    
     private void Start()
     {
         SetInfo();
@@ -54,4 +54,16 @@ public class PowerUpUIObject : MonoBehaviour
         UpdateTexts();
     }
 
+    public bool IsLevelMax()
+    {
+        if (powerUp.level >= powerUp.maxLevel)
+            return true;
+        else
+            return false;
+    }
+
+    public void FreezeUpdate()
+    {
+        
+    }
 }
