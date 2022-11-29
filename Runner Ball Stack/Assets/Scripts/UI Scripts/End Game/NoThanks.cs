@@ -12,9 +12,14 @@ public class NoThanks : MonoBehaviour
     [SerializeField] Button noButton;
     public void NoThanksButton()
     {
+        DisableReClick();
+        StartCoroutine(uITweenAnimation.Animate());
+    }
+
+    private void DisableReClick()
+    {
         noButton.enabled = false;
         earnButton.enabled = false;
-        StartCoroutine(uITweenAnimation.Animate());
         noThanksButtonObj.SetActive(false);
         earnButtonObj.SetActive(false);
     }

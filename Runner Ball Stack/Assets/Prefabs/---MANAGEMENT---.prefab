@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dcac2edbf43574180a86b4fb1a8616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adManager: {fileID: 3633804929451827378}
   earnButtonObj: {fileID: 0}
   noThanksButtonObj: {fileID: 0}
   uITweenAnimation: {fileID: 0}
@@ -265,6 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a274302d9daf09846b0dca53ade1338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adManager: {fileID: 3633804929451827378}
 --- !u!114 &8861625440354943779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +321,7 @@ Transform:
   - {fileID: 4531102286886519674}
   - {fileID: 814349934641439197}
   - {fileID: 1068530724045818620}
+  - {fileID: 2632857163200709328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -365,6 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427cb242a3f21be4a8d6172d24f747f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adManager: {fileID: 3633804929451827378}
   levelManager: {fileID: 0}
   unlockObstacleManager: {fileID: 0}
   ballRotation: {fileID: 0}
@@ -789,3 +793,76 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &8509018074547435061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2632857163200709328}
+  - component: {fileID: 3633804929451827378}
+  - component: {fileID: 5270374443119777559}
+  - component: {fileID: 4553256131439219383}
+  m_Layer: 0
+  m_Name: Admob Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2632857163200709328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509018074547435061}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 304.41046, y: 1538.6554, z: -2223.9724}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6640279958443098076}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3633804929451827378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509018074547435061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfba3dbd928130641beaed57867ba260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  admobInterstitial: {fileID: 5270374443119777559}
+  admobReward: {fileID: 4553256131439219383}
+--- !u!114 &5270374443119777559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509018074547435061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23608042f5723c468127c8f97fec0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canShowAd: 0
+--- !u!114 &4553256131439219383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509018074547435061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e429d72d000f7174686cdb7da28e9ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  earnButton: {fileID: 6640279958002928904}

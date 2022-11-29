@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class EarnButton : MonoBehaviour
 {
+    [SerializeField] AdManager adManager;
+
     [SerializeField]  GameObject earnButtonObj;
     [SerializeField] GameObject noThanksButtonObj;
 
@@ -50,13 +52,25 @@ public class EarnButton : MonoBehaviour
 
     public void EarnWithAd()
     {
+        adManager.admobReward.ShowRewardedExtraCoinAd();
+    }
+
+    public void GiveExtraDiamond()
+    {
+        ScoreManager.Instance.MultiplyTheScore(earnedWheelScore);
+        StartCoroutine(uITweenAnimation.Animate());
+
+        DisableReClick();
+        adManager.admobReward.ShowRewardedExtraCoinAd();
+
+    }
+
+    private void DisableReClick()
+    {
         noButton.enabled = false;
         earnButton.enabled = false;
         isEarnButtonClicked = true;
         adWheelArrow.enabled = false;
-        ScoreManager.Instance.MultiplyTheScore(earnedWheelScore);
-        
-        StartCoroutine(uITweenAnimation.Animate());
         noThanksButtonObj.SetActive(false);
         earnButtonObj.SetActive(false);
     }

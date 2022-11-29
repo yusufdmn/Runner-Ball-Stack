@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
-
+    [SerializeField] AdManager adManager;
     [SerializeField] LevelManager levelManager;
     [SerializeField] UnlockObstacleManager unlockObstacleManager;
 
@@ -65,9 +65,15 @@ public class GameManager : MonoBehaviour
 
     public void CompleteThelevel()
     {
-        ScoreManager.Instance.FinishLevelSuccessfully();
-        levelManager.PasstoNextLevel();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (adManager.admobInterstitial.canShowAd)
+            adManager.admobInterstitial.ShowAd();
+        else
+        {
+            ScoreManager.Instance.FinishLevelSuccessfully();
+            levelManager.PasstoNextLevel();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
         
         //StartCoroutine(NextLevel());
     }
