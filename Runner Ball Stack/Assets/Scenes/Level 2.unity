@@ -12216,6 +12216,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!82 &1245362861 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5611434830938226281, guid: a1685082a4cd2c844bac0a882874749a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1276656276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1245362862 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1562671795250324716, guid: a1685082a4cd2c844bac0a882874749a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1276656276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1248447786
 Mesh:
   m_ObjectHideFlags: 0
@@ -12732,6 +12744,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: Level 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5448557729459437483, guid: a1685082a4cd2c844bac0a882874749a,
+        type: 3}
+      propertyPath: winSound
+      value: 
+      objectReference: {fileID: 1245362862}
+    - target: {fileID: 5448557729459437483, guid: a1685082a4cd2c844bac0a882874749a,
+        type: 3}
+      propertyPath: settingsSound
+      value: 
+      objectReference: {fileID: 1245362861}
     - target: {fileID: 5568320238041627706, guid: a1685082a4cd2c844bac0a882874749a,
         type: 3}
       propertyPath: earnButton
@@ -17136,6 +17158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a90005eb2d6d044be24d8c583d2ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   confetti1: {fileID: 489959471}
   confetti2: {fileID: 489959470}
   areCirclesFull: 0
