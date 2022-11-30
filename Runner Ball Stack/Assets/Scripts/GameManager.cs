@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void CompleteThelevel()
     {
+        adManager.CheckIfRewardedWatched();
         if (adManager.admobInterstitial.canShowAd)
             adManager.admobInterstitial.ShowAd();
         else

@@ -8,7 +8,6 @@ public class AdManager : MonoBehaviour
 {
     public AdmobInterstitial admobInterstitial;
     public AdmobReward admobReward;
-
     void Start()
     {
         MobileAds.Initialize(initStatus => { });
@@ -16,4 +15,9 @@ public class AdManager : MonoBehaviour
         admobInterstitial.RequestInterstitial();
     }
 
+    public void CheckIfRewardedWatched()
+    {
+        if (admobReward.hasRewardWatched)
+            admobInterstitial.canShowAd = false; 
+    }
 }

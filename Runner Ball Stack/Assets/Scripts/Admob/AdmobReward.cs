@@ -13,11 +13,19 @@ public class AdmobReward : MonoBehaviour
 
     private RewardedAd rewardedExtraCoin;
     private RewardedAd rewardedSkipLevel;
+    public bool hasRewardWatched;
 
+    private void Start()
+    {
+        hasRewardWatched = false;
+    }
     public void InstantiateRewardedAds()
     {
-        rewardedExtraCoin = CreateAndLoadRewardedAd();
-        rewardedSkipLevel = CreateAndLoadRewardedAd();
+        string extraID = "ca-app-pub-3940256099942544/5224354917";
+        string skipID = "ca-app-pub-3940256099942544/5224354917";
+
+        rewardedExtraCoin = CreateAndLoadRewardedAd(extraID);
+        rewardedSkipLevel = CreateAndLoadRewardedAd(skipID);
         SetRewardedAdEvents();
     }
 
@@ -37,16 +45,8 @@ public class AdmobReward : MonoBehaviour
         }
     }
 
-    public RewardedAd CreateAndLoadRewardedAd()
+    public RewardedAd CreateAndLoadRewardedAd(string adUnitId)
     {
-#if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
-#elif UNITY_IPHONE
-         string adUnitId = "ca-app-pub-3940256099942544/4411468910";
-#else
-         string dUnitId = "unexpected_platform";
-#endif
-
         RewardedAd rewardedAd = new RewardedAd(adUnitId);
 
         AdRequest request = new AdRequest.Builder().Build();
@@ -71,12 +71,14 @@ public class AdmobReward : MonoBehaviour
 
     public void HandleUserEarnedRewardExtra(object sender, Reward args)
     {
-        earnButton.GiveExtraDiamond();
+        hasRewardWatched = true;
+        earnButton.GiveExtraDiamond(); 
     }
 
 
     public void HandleRewardedAdClosedSkip(object sender, EventArgs args)
     {
+        rewardedSkipLevel.Destroy();
     }
 
     public void HandleUserEarnedRewardSkip(object sender, Reward args)
