@@ -6,12 +6,13 @@ using System;
 
 public class AdmobInterstitial : MonoBehaviour
 {
-    private InterstitialAd interstitial;
+    public InterstitialAd interstitial;
     public bool canShowAd;
 
     public void RequestInterstitial()
     {
-        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+       string adUnitId = "ca-app-pub-2309141602496848/8046976055";
+       //  string adUnitId = "ca-app-pub-3940256099942544/1033173712";  //SAMPLE
 
         this.interstitial = new InterstitialAd(adUnitId);
 
@@ -29,6 +30,10 @@ public class AdmobInterstitial : MonoBehaviour
         if (this.interstitial.IsLoaded())
         {
             this.interstitial.Show();
+        }
+        else
+        {
+            GameManager.Instance.CompleteThelevel();
         }
     }
 

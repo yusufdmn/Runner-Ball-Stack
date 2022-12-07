@@ -323,10 +323,10 @@ namespace RDG
 
             if (text != null) {
                 if (level == logLevel.Warning && LogLevel == logLevel.Warning) {
-                    Debug.LogWarning(text);
+               //     Debug.LogWarning(text);
                 }
                 else if (level == logLevel.Info && LogLevel >= logLevel.Info) {
-                    Debug.Log(text);
+                //    Debug.Log(text);
                 }
             }
         }

@@ -21,8 +21,11 @@ public class AdmobReward : MonoBehaviour
     }
     public void InstantiateRewardedAds()
     {
-        string extraID = "ca-app-pub-3940256099942544/5224354917";
-        string skipID = "ca-app-pub-3940256099942544/5224354917";
+       string extraID = "ca-app-pub-2309141602496848/9934772793";
+        string skipID = "ca-app-pub-2309141602496848/9444065624";
+
+       // string extraID = "ca-app-pub-3940256099942544/5224354917"; //SAMPLE
+       //  string skipID = "ca-app-pub-3940256099942544/5224354917"; //SAMPLE
 
         rewardedExtraCoin = CreateAndLoadRewardedAd(extraID);
         rewardedSkipLevel = CreateAndLoadRewardedAd(skipID);

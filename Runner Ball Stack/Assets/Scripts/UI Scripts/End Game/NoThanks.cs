@@ -12,8 +12,8 @@ public class NoThanks : MonoBehaviour
     [SerializeField] Button noButton;
     public void NoThanksButton()
     {
-        DisableReClick();
         StartCoroutine(uITweenAnimation.Animate());
+        DisableReClick();
     }
 
     private void DisableReClick()

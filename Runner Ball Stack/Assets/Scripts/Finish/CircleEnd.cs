@@ -75,7 +75,8 @@ public class CircleEnd : Finish
 
     public IEnumerator FlyNextBallToLastSpot()
     {
-        Vibration.Vibrate(35);
+        if(Settings.isVibrationOn)
+            Vibration.Vibrate(35);
         yield return new WaitForEndOfFrame();
         Vector3 targetPos = lastSpot.position;
         targetPos.y += 0.5f;
@@ -89,7 +90,7 @@ public class CircleEnd : Finish
 
     public bool CheckIfCirclesFull()
     {
-        bool isFull = (indexOfNextCircle >= circleAmount-1) ? true : false;
+        bool isFull = (indexOfNextCircle >= (circleAmount-1)) ? true : false;
         return isFull;
     }
 

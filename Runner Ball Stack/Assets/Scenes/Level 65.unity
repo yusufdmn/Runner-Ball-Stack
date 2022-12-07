@@ -16554,6 +16554,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9146690180115154312, guid: a1685082a4cd2c844bac0a882874749a,
+        type: 3}
+      propertyPath: isTestActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6177556237727756525, guid: a1685082a4cd2c844bac0a882874749a, type: 3}
     - {fileID: 1821828085365485496, guid: a1685082a4cd2c844bac0a882874749a, type: 3}
@@ -24254,11 +24259,6 @@ Transform:
   - {fileID: 145437774}
   - {fileID: 623520387}
   - {fileID: 504485865}
-  - {fileID: 1173369658}
-  - {fileID: 1329204324}
-  - {fileID: 1745442586}
-  - {fileID: 1265422845}
-  - {fileID: 2120163642}
   - {fileID: 1715156215}
   - {fileID: 662922116}
   - {fileID: 530100216}
@@ -24268,18 +24268,23 @@ Transform:
   - {fileID: 1649464958}
   - {fileID: 583784922}
   - {fileID: 1027004594}
+  - {fileID: 1173369658}
   - {fileID: 1112137705}
-  - {fileID: 2124722589}
+  - {fileID: 1265422845}
   - {fileID: 437078560}
   - {fileID: 895713799}
   - {fileID: 1382987075}
+  - {fileID: 2124722589}
   - {fileID: 312469601}
+  - {fileID: 1329204324}
   - {fileID: 1030212650}
   - {fileID: 1992955018}
   - {fileID: 1501760093}
   - {fileID: 436286119}
   - {fileID: 1771872539}
   - {fileID: 1237531034}
+  - {fileID: 2120163642}
+  - {fileID: 1745442586}
   - {fileID: 644445681}
   - {fileID: 782324653}
   - {fileID: 309138736}
@@ -25269,13 +25274,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 15.679398}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 407141604}
   - {fileID: 701494114}
   - {fileID: 1591884113}
   - {fileID: 1730027490}
+  - {fileID: 963521795}
   - {fileID: 444488953}
   - {fileID: 45187075}
-  - {fileID: 963521795}
-  - {fileID: 407141604}
   - {fileID: 242915075}
   m_Father: {fileID: 1084545797}
   m_RootOrder: 3

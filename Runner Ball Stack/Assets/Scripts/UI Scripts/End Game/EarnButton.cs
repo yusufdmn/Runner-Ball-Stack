@@ -36,7 +36,7 @@ public class EarnButton : MonoBehaviour
             return;
 
         FindEarnedWheelValue();
-        earnText.text = (earnedWheelScore * diamondData.levelScore).ToString();
+        earnText.text = "Get " + (earnedWheelScore * diamondData.levelScore).ToString();
     }
 
     void FindEarnedWheelValue() {
@@ -61,8 +61,7 @@ public class EarnButton : MonoBehaviour
         StartCoroutine(uITweenAnimation.Animate());
 
         DisableReClick();
-        adManager.admobReward.ShowRewardedExtraCoinAd();
-
+        //adManager.admobReward.ShowRewardedExtraCoinAd();
     }
 
     private void DisableReClick()

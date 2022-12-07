@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+    [SerializeField] AnalyticsManager analyticsManager;
     [SerializeField] AdManager adManager;
     [SerializeField] LevelManager levelManager;
     [SerializeField] UnlockObstacleManager unlockObstacleManager;
@@ -65,19 +66,27 @@ public class GameManager : MonoBehaviour
 
     public void CompleteThelevel()
     {
-        adManager.CheckIfRewardedWatched();
+        adManager.CheckIfCanWatchAd();
+
         if (adManager.admobInterstitial.canShowAd)
+        {
             adManager.admobInterstitial.ShowAd();
+        }
         else
         {
             ScoreManager.Instance.FinishLevelSuccessfully();
             levelManager.PasstoNextLevel();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
 
-        
-        //StartCoroutine(NextLevel());
+            try
+            {
+               analyticsManager.SendEventMessage("LevelCompleted");
+            }
+            catch {}
+
+        }
     }
+
 
     public void Failed()
     {
@@ -96,6 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void SkipLevel()
     {
+        analyticsManager.SendEventMessage("SkipLevel");
         ScoreManager.Instance.ResetLevelScore();
         levelManager.PasstoNextLevel();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

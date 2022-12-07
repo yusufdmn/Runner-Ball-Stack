@@ -15,9 +15,20 @@ public class AdManager : MonoBehaviour
         admobInterstitial.RequestInterstitial();
     }
 
-    public void CheckIfRewardedWatched()
+    public void CheckIfCanWatchAd()
     {
+        if (admobInterstitial.interstitial.IsLoaded())
+        {
+            admobInterstitial.canShowAd = true;
+        }
+        else
+        {
+            admobInterstitial.canShowAd = false;
+        }
+
         if (admobReward.hasRewardWatched)
+        {
             admobInterstitial.canShowAd = false; 
+        }
     }
 }
