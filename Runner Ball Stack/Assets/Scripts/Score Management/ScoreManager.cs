@@ -71,7 +71,7 @@ public class ScoreManager : MonoBehaviour
             yield return new WaitForSeconds(0.001f);
         }
         diamondTextUpdater.diamondTextAtEnd.text = (diamondData.diamond + diamondData.levelScore).ToString();
-        //StartCoroutine(AnimateDiamondText());
+
         yield return new WaitForSeconds(1);
 
         shouldUnlockObstacle = unlockObstacleManager.shouldUnlockObstacle;
@@ -79,21 +79,6 @@ public class ScoreManager : MonoBehaviour
             canvasManager.DisplayUnlockObstaclePanel();
         else
             GameManager.Instance.CompleteThelevel();
-    }
-
-    IEnumerator AnimateDiamondText()
-    {
-        int preScore = diamondData.diamond;
-        int newScore = diamondData.diamond + diamondData.levelScore;
-        int number = preScore;
-
-        int animationSpeed = 5 + ((newScore - preScore) / 150);
-        while (number <= newScore)
-        {
-            number += animationSpeed;
-            diamondTextUpdater.diamondTextAtEnd.text = number.ToString();
-            yield return new WaitForSeconds(0.001f);
-        }
     }
 
     public void AddExtraIncome()
