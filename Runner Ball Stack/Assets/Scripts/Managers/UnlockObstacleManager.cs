@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class UnlockObstacleManager : MonoBehaviour
 {
-    [SerializeField] LevelManager levelManager;
-    public bool shouldUnlockObstacle;
+    [SerializeField] LevelManager levelManager;    
     [SerializeField] LevelScriptable obstacleDataScriptable;
-    [SerializeField] Image obstacleImage;
+    [SerializeField] Image obstacleImage;    
+    public bool shouldUnlockObstacle;
+    
     public void SetUnlockObstacleInfo()
     {
         shouldUnlockObstacle = obstacleDataScriptable.GetIfUnlcokObstacle(levelManager.level);
