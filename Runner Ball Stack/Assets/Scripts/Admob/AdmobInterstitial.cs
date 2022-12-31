@@ -11,7 +11,6 @@ public class AdmobInterstitial : MonoBehaviour
 
     public void RequestInterstitial()
     {
-       string adUnitId = "ca-app-pub-2309141602496848/8046976055";
        //  string adUnitId = "ca-app-pub-3940256099942544/1033173712";  //SAMPLE
 
         this.interstitial = new InterstitialAd(adUnitId);
