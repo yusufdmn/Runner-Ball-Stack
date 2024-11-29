@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     [SerializeField] AnalyticsManager analyticsManager;
-    [SerializeField] AdManager adManager;
     [SerializeField] LevelManager levelManager;
     [SerializeField] UnlockObstacleManager unlockObstacleManager;
 
@@ -66,25 +65,19 @@ public class GameManager : MonoBehaviour
 
     public void CompleteThelevel()
     {
-        adManager.CheckIfCanWatchAd();
+        ScoreManager.Instance.FinishLevelSuccessfully();
+        levelManager.PasstoNextLevel();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-        if (adManager.admobInterstitial.canShowAd)
+        try
         {
-            adManager.admobInterstitial.ShowAd();
+            analyticsManager.SendEventMessage("LevelCompleted");
         }
-        else
-        {
-            ScoreManager.Instance.FinishLevelSuccessfully();
-            levelManager.PasstoNextLevel();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-            try
-            {
-               analyticsManager.SendEventMessage("LevelCompleted");
-            }
-            catch {}
-
+        catch
+        { 
+            
         }
+
     }
 
 

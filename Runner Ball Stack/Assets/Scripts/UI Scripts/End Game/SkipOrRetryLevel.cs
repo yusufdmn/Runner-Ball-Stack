@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SkipOrRetryLevel : MonoBehaviour
 {
-    [SerializeField] AdManager adManager;
-
     public void SkipLevel()
     {
-        adManager.admobReward.ShowRewardedSkipLevelAd();
+        GameManager.Instance.CompleteThelevel();
     }
     public void RetryLevel()
     {

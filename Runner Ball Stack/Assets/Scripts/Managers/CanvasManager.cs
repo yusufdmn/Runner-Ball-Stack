@@ -5,10 +5,10 @@ using UnityEngine;
 public class CanvasManager : MonoBehaviour
 {
     [Header("Canvas & Menu")]
-    [SerializeField] Canvas mainMenu;
+    [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject hidedMenu;
-    [SerializeField] Canvas endPanel;
-    [SerializeField] Canvas failPanel;
+    [SerializeField] GameObject endPanel;
+    [SerializeField] GameObject failPanel;
     [SerializeField] GameObject extraIncomePanel;
     [SerializeField] Canvas unlockObstaclePanel;
     [SerializeField] GameObject settingsPopUp;
@@ -27,16 +27,16 @@ public class CanvasManager : MonoBehaviour
     public void DisplayEndPanel()
     {
         StartCoroutine(DisableExtraPanel());
-        endPanel.enabled = true;
-        mainMenu.enabled = false;
+        endPanel.SetActive(true);
+        mainMenu.SetActive(false);
 
         animPlayerEndCanvas.PlayAnimations();
     }
 
     public void DisplayFailPanel()
     {
-        failPanel.enabled = true;
-        mainMenu.enabled = false;
+        failPanel.SetActive(true);
+        mainMenu.SetActive(false);
 
         animPlayerFailCanvas.PlayAnimations();
     }

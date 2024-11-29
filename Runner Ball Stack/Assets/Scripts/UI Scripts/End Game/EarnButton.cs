@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class EarnButton : MonoBehaviour
 {
-    [SerializeField] AdManager adManager;
-
     [SerializeField]  GameObject earnButtonObj;
     [SerializeField] GameObject noThanksButtonObj;
 
@@ -52,7 +50,7 @@ public class EarnButton : MonoBehaviour
 
     public void EarnWithAd()
     {
-        adManager.admobReward.ShowRewardedExtraCoinAd();
+        GiveExtraDiamond();
     }
 
     public void GiveExtraDiamond()

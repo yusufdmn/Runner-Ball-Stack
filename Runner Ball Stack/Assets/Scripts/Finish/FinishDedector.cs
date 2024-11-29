@@ -7,7 +7,7 @@ public class FinishDedector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "ThrowBall")
+        if(other.CompareTag("ThrowBall"))
         {
             GameManager.Instance.isFinishModeStarted = true;
             other.tag = "Untagged";
@@ -20,7 +20,7 @@ public class FinishDedector : MonoBehaviour
             }
         }
 
-        if(other.tag == "CircleEnd")
+        if(other.CompareTag("CircleEnd"))
         {
             Camera.main.GetComponent<CameraMovement>().isFinished = true;
             GameManager.Instance.isFinishModeStarted = true;
