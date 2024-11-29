@@ -12242,6 +12242,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -17324,7 +17325,7 @@ PrefabInstance:
     - target: {fileID: 2165446099922407357, guid: a1685082a4cd2c844bac0a882874749a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2516218587349785415, guid: a1685082a4cd2c844bac0a882874749a,
         type: 3}
@@ -17465,7 +17466,7 @@ PrefabInstance:
     - target: {fileID: 8022021836551089740, guid: a1685082a4cd2c844bac0a882874749a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6177556237727756525, guid: a1685082a4cd2c844bac0a882874749a, type: 3}
